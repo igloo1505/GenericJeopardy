@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://Iglooworks:Bigmilly1@cluster0-wafkz.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}
