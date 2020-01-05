@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
+import "./questionStyle.css";
 
 const QuestionForm = () => {
   const questionContext = useContext(QuestionContext);
@@ -59,7 +60,7 @@ const QuestionForm = () => {
   return (
     <form onSubmit={onSubmit}>
       <h2 className="text-primary">
-        {current ? "Edit Contact" : "Add Contact"}
+        {current ? "Edit Question" : "Add Question"}
       </h2>
       <input
         type="text"
@@ -68,12 +69,13 @@ const QuestionForm = () => {
         value={question.question}
         onChange={onChange}
       />
-      <input
+      <textarea
         type="text"
         placeholder="Answer"
         name="answer"
         value={answer}
         onChange={onChange}
+        style={{ height: "8rem" }}
       />
       <input
         type="text"
@@ -82,17 +84,27 @@ const QuestionForm = () => {
         value={category}
         onChange={onChange}
       />
+      <datalist id="pointsData">
+        <option value="100" />
+        <option value="200" />
+        <option value="300" />
+        <option value="400" />
+        <option value="500" />
+      </datalist>
       <input
         type="number"
         placeholder="Points"
         name="points"
+        list="pointsData"
         value={points}
         onChange={onChange}
       />
+      <div></div>
+
       <div>
         <input
           type="submit"
-          value={current ? "Update" : "Add Contact"}
+          value={current ? "Update" : "Add Question"}
           className="btn btn-primary btn-block"
         />
       </div>
