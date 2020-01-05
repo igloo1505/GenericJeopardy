@@ -68,6 +68,7 @@ const QuestionForm = () => {
         name="question"
         value={question.question}
         onChange={onChange}
+        required
       />
       <textarea
         type="text"
@@ -75,6 +76,7 @@ const QuestionForm = () => {
         name="answer"
         value={answer}
         onChange={onChange}
+        required
         style={{ height: "8rem" }}
       />
       <input
@@ -83,6 +85,7 @@ const QuestionForm = () => {
         name="category"
         value={category}
         onChange={onChange}
+        required
       />
       <datalist id="pointsData">
         <option value="100" />
@@ -98,9 +101,8 @@ const QuestionForm = () => {
         list="pointsData"
         value={points}
         onChange={onChange}
+        required
       />
-      <div></div>
-
       <div>
         <input
           type="submit"

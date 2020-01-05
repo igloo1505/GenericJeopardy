@@ -14,27 +14,30 @@ import {
   REMOVE_ALERT
 } from "../types";
 
+var answerInput =
+  "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quidem sint velit aspernatur unde sapiente minus rem delectus, similique itaque quos consequuntur dolore inventore. Non omnis obcaecati ratione laboriosam quaerat.";
+
 const QuestionState = props => {
   const initialState = {
     questions: [
       {
         id: 1,
-        question: "What is the craziest drug on the planet?",
-        answer: "Bath Salts",
+        question: "Question one?",
+        answer: answerInput,
         points: 400,
         category: "Crazy Shit"
       },
       {
         id: 2,
-        question: "What the shit?",
+        question: "Question two?",
         answer: "Peanut Butter",
         points: 200,
         category: "Woah"
       },
       {
         id: 3,
-        question: "Why are you single?",
-        answer: "Because I'm lame",
+        question: "Question three?",
+        answer: answerInput,
         points: 300,
         category: "Crazy Shit"
       }
