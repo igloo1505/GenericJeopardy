@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import QuestionContext from "../../context/questions/questionContext";
 import PropTypes from "prop-types";
 
 const QuestionItem = ({ question }) => {
+  const questionContext = useContext(QuestionContext);
+  const { deleteQuestion, setCurrent, clearCurrent } = questionContext;
   const { id, category, points } = question;
+
+  const onDelete = () => {
+    deleteQuestion(id);
+    clearCurrent();
+  };
 
   return (
     <div className="card bg-light">
@@ -12,8 +20,15 @@ const QuestionItem = ({ question }) => {
           {points}
         </span>
       </h3>
-      <button className="btn btn-dark btn-sm">Edit</button>
-      <button className="btn btn-danger btn-sm">Delete</button>
+      <button
+        className="btn btn-dark btn-sm"
+        onClick={() => setCurrent(question)}
+      >
+        Edit
+      </button>
+      <button className="btn btn-danger btn-sm" onClick={onDelete}>
+        Delete
+      </button>
     </div>
   );
 };

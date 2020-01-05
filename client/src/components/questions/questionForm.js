@@ -1,6 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import QuestionContext from "../../context/questions/questionContext";
 
 const QuestionForm = () => {
+  const questionContext = useContext(QuestionContext);
+
+  const {
+    addQuestion,
+    current,
+    clearCurrent,
+    updateQuestion
+  } = questionContext;
+
+  useEffect(() => {
+    if (current !== null) {
+      setQuestion(current);
+    } else {
+      setQuestion({
+        question: "",
+        answer: "",
+        category: "",
+        points: Number
+      });
+    }
+  }, [questionContext, current]);
+
   const [question, setQuestion] = useState({
     question: "",
     answer: "",
@@ -12,9 +35,32 @@ const QuestionForm = () => {
   const onChange = e =>
     setQuestion({ ...question, [e.target.name]: e.target.value });
 
+  const onSubmit = e => {
+    e.preventDefault();
+    if (current === null) {
+      questionContext.addQuestion(question);
+    } else {
+      updateQuestion(question);
+      clearCurrent();
+    }
+    setQuestion({
+      question: "",
+      answer: "",
+      category: "",
+      points: Number
+    });
+    clearCurrent();
+  };
+
+  const clearAll = () => {
+    clearCurrent();
+  };
+
   return (
-    <form>
-      <h2 className="text-primary">Add Question</h2>
+    <form onSubmit={onSubmit}>
+      <h2 className="text-primary">
+        {current ? "Edit Contact" : "Add Contact"}
+      </h2>
       <input
         type="text"
         placeholder="Question"
@@ -46,10 +92,17 @@ const QuestionForm = () => {
       <div>
         <input
           type="submit"
-          value="Submit"
+          value={current ? "Update" : "Add Contact"}
           className="btn btn-primary btn-block"
         />
       </div>
+      {current && (
+        <div>
+          <button className="btn btn-light btn-block" onClick={clearAll}>
+            Clear
+          </button>
+        </div>
+      )}
     </form>
   );
 };
