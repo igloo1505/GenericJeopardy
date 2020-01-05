@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
+const auth = require("./middleware/auth");
 
 const app = express();
 
@@ -10,8 +11,9 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 // // DEFINE ROUTES
-// app.use("/api/users", require("./routes/Users"));
-// app.use("/api/auth", require("./routes/Auth"));
+app.use("/users", require("./routes/Users"));
+app.use("/auth", require("./routes/Auth"));
+app.use("/questions", require("./routes/Questions"));
 
 const PORT = process.env.PORT || 5000;
 
