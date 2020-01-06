@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
-import "./questionStyle.css";
 
 const QuestionForm = () => {
   const questionContext = useContext(QuestionContext);

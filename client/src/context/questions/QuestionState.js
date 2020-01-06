@@ -25,7 +25,7 @@ const QuestionState = props => {
         question: "Question one?",
         answer: answerInput,
         points: 400,
-        category: "Crazy Shit"
+        category: "Woah"
       },
       {
         id: 2,
@@ -40,6 +40,13 @@ const QuestionState = props => {
         answer: answerInput,
         points: 300,
         category: "Crazy Shit"
+      },
+      {
+        id: 4,
+        question: "Question four?",
+        answer: answerInput,
+        points: 400,
+        category: "Working"
       }
     ],
     current: null,

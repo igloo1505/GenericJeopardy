@@ -1,9 +1,18 @@
 import React from "react";
+import Questions from "../questions/Questions";
+import QuestionForm from "../questions/QuestionForm";
+import QuestionFilter from "../questions/QuestionFilter";
 
 const Admin = () => {
   return (
-    <div>
-      <h1>Admin page</h1>
+    <div className="grid-2">
+      <div>
+        <QuestionForm />
+      </div>
+      <div>
+        <QuestionFilter />
+        <Questions />
+      </div>
     </div>
   );
 };
