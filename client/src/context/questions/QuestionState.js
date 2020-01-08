@@ -11,6 +11,10 @@ import {
   UPDATE_QUESTION,
   FILTER_QUESTIONS,
   CLEAR_FILTER,
+  QUESTION_ERROR,
+  GET_QUESTIONS,
+  CLEAR_ERRORS,
+  CLEAR_QUESTIONS,
   SET_ALERT,
   REMOVE_ALERT
 } from "../types";
@@ -22,14 +26,34 @@ const QuestionState = props => {
   const initialState = {
     questions: [],
     current: null,
-    filtered: null
+    filtered: null,
+    error: null
   };
   const [state, dispatch] = useReducer(QuestionReducer, initialState);
 
+  //   Get questions
+  const getQuestions = async () => {
+    try {
+      const res = await axios.get("/questions");
+      dispatch({ type: GET_QUESTIONS, payload: res.data });
+    } catch (err) {
+      dispatch({ type: QUESTION_ERROR, payload: err.response.msg });
+    }
+  };
+
   // Add Question
-  const addQuestion = question => {
-    question.id = uuid.v4();
-    dispatch({ type: ADD_QUESTION, payload: question });
+  const addQuestion = async question => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    try {
+      const res = await axios.post("/questions", question, config);
+      dispatch({ type: ADD_QUESTION, payload: res.data });
+    } catch (error) {
+      dispatch({ type: QUESTION_ERROR, payload: error.response.msg });
+    }
   };
 
   // Delete Question
@@ -63,12 +87,14 @@ const QuestionState = props => {
         questions: state.questions,
         current: state.current,
         filtered: state.filtered,
+        error: state.error,
         addQuestion,
         deleteQuestion,
         setCurrent,
         clearCurrent,
         updateQuestion,
         filterQuestions,
+        getQuestions,
         clearFilter
       }}
     >

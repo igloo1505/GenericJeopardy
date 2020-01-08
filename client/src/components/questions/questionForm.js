@@ -61,7 +61,7 @@ const QuestionForm = () => {
   if (questions !== []) {
     for (var i = 0; i < questions.length; i++) {
       var catOutput = questions[i].category;
-      if (DynamicArray.indexOf(catOutput) == -1) {
+      if (DynamicArray.indexOf(catOutput) === -1) {
         DynamicArray.push(catOutput);
       }
     }

@@ -16,9 +16,12 @@ const QuestionItem = ({ question }) => {
     <div className="card bg-light">
       <h3 className="text-primary text-left">
         {question.question}{" "}
-        <span style={{ float: "right" }} className="badge badge-success">
+        <div style={{ float: "right" }} className="badge badge-success">
           {points}
-        </span>
+        </div>
+        <div style={{ float: "right" }} className="badge badge-success">
+          {category}
+        </div>
       </h3>
       <button
         className="btn btn-dark btn-sm"

@@ -28,4 +28,26 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
+router.get("/", auth, async (req, res) => {
+  try {
+    const questions = await Question.find();
+    res.json(questions);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("get failed");
+  }
+});
+
+// router.get("/", auth, async (req, res) => {
+//   try {
+//     const contacts = await Contact.find({ user: req.user.id }).sort({
+//       date: -1
+//     });
+//     res.json(contacts);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).send("Server Error");
+//   }
+// });
+
 module.exports = router;
