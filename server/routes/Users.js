@@ -28,20 +28,31 @@ router.post(
         errors: errors.array()
       });
     }
-    const { name, email, password } = req.body;
+    const { name, email, password, master } = req.body;
 
     try {
       let user = await User.findOne({ email: email });
+      const masterCheck = await bcrypt.compare(
+        master,
+        config.get("masterPass")
+      );
       if (user) {
         return res.status(400).json({
           msg: "User already exists"
         });
+      } else if (masterCheck == false) {
+        return res.status(400).json({
+          msg: "Master password is required to become an administrator"
+        });
       }
+
       user = new User({
         name,
         email,
-        password
+        password,
+        master
       });
+
       const salt = await bcrypt.genSalt(10);
 
       user.password = await bcrypt.hash(password, salt);
@@ -65,7 +76,7 @@ router.post(
         }
       );
     } catch (err) {
-      console.error(error.msg);
+      console.error(err.msg);
       res.status(500).send("server error");
     }
   }

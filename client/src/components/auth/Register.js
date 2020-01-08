@@ -13,10 +13,13 @@ const Register = props => {
     // if (isAuthenticated) {
     //   props.history.push("/");
     // }
-
     if (error === "User already exists") {
       setAlert(error, "danger");
       //   clearErrors();
+    } else if (
+      error === "Master password is required to become an administrator"
+    ) {
+      setAlert(error, "danger");
     }
     // eslint-disable-next-line
   }, [error]);
@@ -25,10 +28,11 @@ const Register = props => {
     name: "",
     email: "",
     password: "",
-    password2: ""
+    password2: "",
+    master: ""
   });
 
-  const { name, email, password, password2 } = user;
+  const { name, email, password, password2, master } = user;
   const onChange = e =>
     setUser({
       ...user,
@@ -46,7 +50,8 @@ const Register = props => {
       register({
         name,
         email,
-        password
+        password,
+        master
       });
     }
   };
@@ -99,6 +104,17 @@ const Register = props => {
             minLength="8"
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="master">Dewey Center Master Password</label>
+          <input
+            type="password"
+            name="master"
+            value={master}
+            onChange={onChange}
+            required
+          />
+        </div>
+
         <input
           type="submit"
           value="Register"

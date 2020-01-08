@@ -15,7 +15,6 @@ const QuestionFilter = () => {
       DynamicArray.push(catOutput);
     }
   }
-  console.log(DynamicArray);
 
   useEffect(() => {
     if (filtered === null) {
