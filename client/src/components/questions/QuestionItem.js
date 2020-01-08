@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const QuestionItem = ({ question }) => {
   const questionContext = useContext(QuestionContext);
   const { deleteQuestion, setCurrent, clearCurrent } = questionContext;
-  const { _id, category, points } = question;
+  const { _id, category, points, answer } = question;
 
   const onDelete = () => {
     deleteQuestion(_id);
@@ -14,19 +14,23 @@ const QuestionItem = ({ question }) => {
 
   return (
     <div className="card bg-light">
-      <h3 className="text-primary text-left">
-        {question.question}{" "}
-        <div style={{ float: "right" }} className="badge badge-success">
-          {points}
-        </div>
-      </h3>
+      <h3 className="text-primary text-left question">{question.question}</h3>
+      <h5 className="text-dark text-left answer">{answer}</h5>
+      <div style={{ float: "right" }} className="badge badge-success points">
+        {points}
+      </div>
+
+      <div style={{ float: "right" }} className="badge badge-light category">
+        {category}
+      </div>
+
       <button
-        className="btn btn-dark btn-sm"
+        className="btn btn-dark btn-sm edit"
         onClick={() => setCurrent(question)}
       >
         Edit
       </button>
-      <button className="btn btn-danger btn-sm" onClick={onDelete}>
+      <button className="btn btn-danger btn-sm delete" onClick={onDelete}>
         Delete
       </button>
     </div>

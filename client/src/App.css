@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /* Global Styles */
 :root {
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -90,11 +90,37 @@ img {
   text-align: left;
 }
 
+.question {
+  grid-area: question;
+}
+.edit {
+  grid-area: edit;
+}
+.category {
+  grid-area: category;
+}
+.delete {
+  grid-area: delete;
+}
+.points {
+  grid-area: points;
+}
+.answer {
+  grid-area: answer;
+}
 /* Cards */
 .card {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "question question question points"
+    "answer answer answer category"
+    "answer answer answer ."
+    "edit delete . .";
 }
 
 /* List */
@@ -318,11 +344,11 @@ input {
   color: #888;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-input[type='number'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
 select,
 textarea {
   display: block;
@@ -332,7 +358,7 @@ textarea {
   border: 1px solid #ccc;
 }
 
-input[type='submit'],
+input[type="submit"],
 button {
   font: inherit;
 }
@@ -398,7 +424,6 @@ table th {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
-
 
 .item-enter {
   opacity: 0;
