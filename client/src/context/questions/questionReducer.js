@@ -9,7 +9,8 @@ import {
   SET_ALERT,
   REMOVE_ALERT,
   QUESTION_ERROR,
-  GET_QUESTIONS
+  GET_QUESTIONS,
+  CLEAR_QUESTIONS
 } from "../types";
 
 export default (state, action) => {
@@ -17,17 +18,26 @@ export default (state, action) => {
     case ADD_QUESTION:
       return {
         ...state,
-        questions: [...state.questions, action.payload],
+        questions: [action.payload, ...state.questions],
         loading: false
       };
     case DELETE_QUESTION:
       return {
         ...state,
         questions: state.questions.filter(
-          question => question.id !== action.payload
+          question => question._id !== action.payload
         ),
         loading: false
       };
+    case CLEAR_QUESTIONS:
+      return {
+        ...state,
+        questions: null,
+        filtered: null,
+        error: null,
+        current: null
+      };
+
     case SET_CURRENT:
       return {
         ...state,
@@ -42,7 +52,7 @@ export default (state, action) => {
       return {
         ...state,
         questions: state.questions.map(question =>
-          question.id === action.payload.id ? action.payload : question
+          question._id === action.payload._id ? action.payload : question
         ),
         loading: false
       };

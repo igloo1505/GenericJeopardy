@@ -13,7 +13,7 @@ const Questions = () => {
     // eslint-disable-next-line
   }, []);
 
-  if (questions.length == 0 && loading == false) {
+  if (questions === null && !loading) {
     return (
       <h4>
         <em>Woah.</em> <br /> Add questions to this category

@@ -2,13 +2,18 @@ import React, { Fragment, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
-import PrivateRoute from "../routing/Private";
+import QuestionContext from "../../context/questions/questionContext";
 
 const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
+  const questionContext = useContext(QuestionContext);
+  const { clearQuestion } = questionContext;
   const { isAuthenticated, logoutUser, user } = authContext;
 
-  const onLogout = () => logoutUser();
+  const onLogout = () => {
+    logoutUser();
+    clearQuestion();
+  };
 
   const authed = (
     <Fragment>

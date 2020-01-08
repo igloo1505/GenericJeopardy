@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import uuid from "uuid";
+
 import axios from "axios";
 import QuestionContext from "./questionContext";
 import QuestionReducer from "./questionReducer";
@@ -24,7 +24,7 @@ var answerInput =
 
 const QuestionState = props => {
   const initialState = {
-    questions: [],
+    questions: null,
     current: null,
     filtered: null,
     error: null
@@ -57,9 +57,23 @@ const QuestionState = props => {
   };
 
   // Delete Question
-  const deleteQuestion = id => {
-    dispatch({ type: DELETE_QUESTION, payload: id });
+
+  const deleteQuestion = async id => {
+    try {
+      await axios.delete(`/questions/${id}`);
+
+      dispatch({
+        type: DELETE_QUESTION,
+        payload: id
+      });
+    } catch (err) {
+      dispatch({
+        type: QUESTION_ERROR,
+        payload: err.response.msg
+      });
+    }
   };
+
   // Set Current Question
   const setCurrent = question => {
     dispatch({ type: SET_CURRENT, payload: question });
@@ -68,9 +82,36 @@ const QuestionState = props => {
   const clearCurrent = () => {
     dispatch({ type: CLEAR_CURRENT });
   };
+
+  //   Clear question state
+  const clearQuestion = () => {
+    dispatch({ type: CLEAR_QUESTIONS });
+  };
   // Update Question
-  const updateQuestion = question => {
-    dispatch({ type: UPDATE_QUESTION, payload: question });
+  const updateQuestion = async question => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    try {
+      const res = await axios.put(
+        `/questions/${question._id}`,
+        question,
+        config
+      );
+
+      dispatch({
+        type: UPDATE_QUESTION,
+        payload: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: QUESTION_ERROR,
+        payload: err.response.msg
+      });
+    }
   };
   // Filter Questions
   const filterQuestions = text => {
@@ -95,7 +136,8 @@ const QuestionState = props => {
         updateQuestion,
         filterQuestions,
         getQuestions,
-        clearFilter
+        clearFilter,
+        clearQuestion
       }}
     >
       {props.children}

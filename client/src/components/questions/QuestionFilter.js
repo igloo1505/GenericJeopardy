@@ -9,7 +9,7 @@ const QuestionFilter = () => {
   const { filterQuestions, clearFilter, filtered, questions } = questionContext;
 
   let DynamicArray = [];
-  if (questions !== []) {
+  if (questions) {
     for (var i = 0; i < questions.length; i++) {
       var catOutput = questions[i].category;
       if (DynamicArray.indexOf(catOutput) == -1) {

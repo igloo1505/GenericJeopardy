@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 const QuestionItem = ({ question }) => {
   const questionContext = useContext(QuestionContext);
   const { deleteQuestion, setCurrent, clearCurrent } = questionContext;
-  const { id, category, points } = question;
+  const { _id, category, points } = question;
 
   const onDelete = () => {
-    deleteQuestion(id);
+    deleteQuestion(_id);
     clearCurrent();
   };
 
@@ -18,9 +18,6 @@ const QuestionItem = ({ question }) => {
         {question.question}{" "}
         <div style={{ float: "right" }} className="badge badge-success">
           {points}
-        </div>
-        <div style={{ float: "right" }} className="badge badge-success">
-          {category}
         </div>
       </h3>
       <button
