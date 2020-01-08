@@ -9,13 +9,14 @@ const QuestionFilter = () => {
   const { filterQuestions, clearFilter, filtered, questions } = questionContext;
 
   let DynamicArray = [];
-  for (var i = 0; i < questions.length; i++) {
-    var catOutput = questions[i].category;
-    if (DynamicArray.indexOf(catOutput) == -1) {
-      DynamicArray.push(catOutput);
+  if (questions !== []) {
+    for (var i = 0; i < questions.length; i++) {
+      var catOutput = questions[i].category;
+      if (DynamicArray.indexOf(catOutput) == -1) {
+        DynamicArray.push(catOutput);
+      }
     }
   }
-
   useEffect(() => {
     if (filtered === null) {
       text.current.value = "";

@@ -3,6 +3,7 @@ import QuestionContext from "../../context/questions/questionContext";
 
 const QuestionForm = () => {
   const questionContext = useContext(QuestionContext);
+  const { questions } = questionContext;
 
   const {
     addQuestion,
@@ -56,6 +57,16 @@ const QuestionForm = () => {
     clearCurrent();
   };
 
+  let DynamicArray = [];
+  if (questions !== []) {
+    for (var i = 0; i < questions.length; i++) {
+      var catOutput = questions[i].category;
+      if (DynamicArray.indexOf(catOutput) == -1) {
+        DynamicArray.push(catOutput);
+      }
+    }
+  }
+
   return (
     <form onSubmit={onSubmit}>
       <h2 className="text-primary">
@@ -84,8 +95,14 @@ const QuestionForm = () => {
         name="category"
         value={category}
         onChange={onChange}
+        list="categoryList"
         required
       />
+      <datalist id="categoryList">
+        {DynamicArray.map((item, key) => (
+          <option key={key} value={item} />
+        ))}
+      </datalist>
       <datalist id="pointsData">
         <option value="100" />
         <option value="200" />

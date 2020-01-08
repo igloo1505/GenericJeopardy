@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import uuid from "uuid";
+import axios from "axios";
 import QuestionContext from "./questionContext";
 import QuestionReducer from "./questionReducer";
 import {
@@ -19,36 +20,7 @@ var answerInput =
 
 const QuestionState = props => {
   const initialState = {
-    questions: [
-      {
-        id: 1,
-        question: "Question one?",
-        answer: answerInput,
-        points: 400,
-        category: "Woah"
-      },
-      {
-        id: 2,
-        question: "Question two?",
-        answer: "Peanut Butter",
-        points: 200,
-        category: "Woah"
-      },
-      {
-        id: 3,
-        question: "Question three?",
-        answer: answerInput,
-        points: 300,
-        category: "Crazy Shit"
-      },
-      {
-        id: 4,
-        question: "Question four?",
-        answer: answerInput,
-        points: 400,
-        category: "Working"
-      }
-    ],
+    questions: [],
     current: null,
     filtered: null
   };

@@ -8,7 +8,7 @@ const Questions = () => {
 
   const { questions, filtered } = questionContext;
 
-  if (questions.length === 0) {
+  if (questions === [] || questions.length == 0) {
     return (
       <h4>
         <em>Woah.</em> <br /> Add questions to this category
