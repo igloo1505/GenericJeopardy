@@ -29,7 +29,7 @@ const AuthState = props => {
     setAuth(localStorage.token);
 
     try {
-      const res = await axios.get("/api/auth");
+      const res = await axios.get("/auth");
 
       dispatch({
         type: USER_LOADED,
@@ -53,6 +53,7 @@ const AuthState = props => {
         type: REGISTER_SUCCESS,
         payload: res.data
       });
+      loadUser();
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
@@ -62,10 +63,30 @@ const AuthState = props => {
   };
 
   // Login User
-
+  const loginUser = async formData => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    try {
+      const res = await axios.post("/auth", formData, config);
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data
+      });
+      loadUser();
+    } catch (err) {
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: err.response.data.msg
+      });
+    }
+  };
   // Logout
-
+  const logoutUser = () => dispatch({ type: LOGOUT });
   // Clear Errors
+  const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
   return (
     <AuthContext.Provider
@@ -76,7 +97,10 @@ const AuthState = props => {
         error: state.error,
         user: state.user,
         register,
-        loadUser
+        loadUser,
+        loginUser,
+        logoutUser,
+        clearErrors
       }}
     >
       {props.children}

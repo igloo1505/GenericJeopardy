@@ -4,32 +4,31 @@ import AuthContext from "../../context/auth/authContext";
 
 const Register = props => {
   const authContext = useContext(AuthContext);
-
   const alertContext = useContext(AlertContext);
-
   const { setAlert } = alertContext;
-  const { register, error } = authContext;
+  const { register, error, clearErrors, isAuthenticated } = authContext;
+
   useEffect(() => {
-    // if (isAuthenticated) {
-    //   props.history.push("/");
-    // }
+    if (isAuthenticated) {
+      props.history.push("/");
+    }
     if (error === "User already exists") {
       setAlert(error, "danger");
-      //   clearErrors();
+      clearErrors();
     } else if (
       error === "Master password is required to become an administrator"
     ) {
       setAlert(error, "danger");
+      clearErrors();
     }
     // eslint-disable-next-line
-  }, [error]);
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     name: "",
     email: "",
     password: "",
-    password2: "",
-    master: ""
+    password2: ""
   });
 
   const { name, email, password, password2, master } = user;

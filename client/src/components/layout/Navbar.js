@@ -1,8 +1,39 @@
-import React from "react";
+import React, { Fragment, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import AuthContext from "../../context/auth/authContext";
+import PrivateRoute from "../routing/Private";
 
 const Navbar = ({ title, icon }) => {
+  const authContext = useContext(AuthContext);
+  const { isAuthenticated, logoutUser, user } = authContext;
+
+  const onLogout = () => logoutUser();
+
+  const authed = (
+    <Fragment>
+      <li>
+        <Link to="/admin">Admin</Link>
+      </li>
+      <li>
+        <a onClick={onLogout} href="#!">
+          Logout
+        </a>
+      </li>
+    </Fragment>
+  );
+
+  const guest = (
+    <Fragment>
+      <li>
+        <Link to="/register">Register</Link>
+      </li>
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
+    </Fragment>
+  );
+
   return (
     <div className="navbar bg-primary">
       <h1>
@@ -13,15 +44,8 @@ const Navbar = ({ title, icon }) => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/admin">Admin</Link>
-        </li>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
+
+        {isAuthenticated ? authed : guest}
         <li>
           <Link to="/about">About</Link>
         </li>

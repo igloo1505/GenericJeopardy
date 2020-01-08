@@ -49,8 +49,7 @@ router.post(
       user = new User({
         name,
         email,
-        password,
-        master
+        password
       });
 
       const salt = await bcrypt.genSalt(10);
