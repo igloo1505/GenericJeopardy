@@ -1,19 +1,17 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
-import PlayButton from "../play/PlayButton";
 
-const Home = () => {
+const Play = () => {
   const authContext = useContext(AuthContext);
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
   }, []);
-
   return (
     <div>
-      <PlayButton />
+      <h1>Play layout coming soon.</h1>
     </div>
   );
 };
 
-export default Home;
+export default Play;

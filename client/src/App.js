@@ -11,6 +11,7 @@ import QuestionState from "./context/questions/QuestionState";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import PrivateRoute from "./components/routing/Private";
+import Play from "./components/pages/play";
 import setAuth from "./utils/setAuth";
 import "./App.css";
 
@@ -34,6 +35,7 @@ const App = () => {
                   <PrivateRoute exact path="/admin" component={Admin} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
+                  <PrivateRoute exact path="/play" component={Play} />
                 </Switch>
               </div>
             </Fragment>
