@@ -123,6 +123,20 @@ img {
     "edit delete . .";
 }
 
+.card-container {
+  display: block;
+
+  background-color: #95dada;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
 /* List */
 .list {
   margin: 0.5rem 0;
@@ -222,6 +236,15 @@ img {
   grid-template-columns: 2fr 3fr;
   grid-gap: 2rem;
 }
+.mainGrid {
+  /* width: 85vw; */
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 5px;
+  grid-template-areas: ;
+}
 
 .btn {
   display: inline-block;
@@ -262,8 +285,8 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   min-height: 200px;
-  line-height: 200px;
   min-width: 400px;
+  max-width: 600px;
   border-radius: 15px;
   display: inline-block;
   text-align: center;
@@ -401,6 +424,9 @@ button {
 .form-container h1,
 h2,
 h3 {
+  text-align: center;
+}
+.quote {
   text-align: center;
 }
 

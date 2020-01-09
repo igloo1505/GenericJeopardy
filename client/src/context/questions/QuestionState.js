@@ -19,9 +19,6 @@ import {
   REMOVE_ALERT
 } from "../types";
 
-var answerInput =
-  "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quidem sint velit aspernatur unde sapiente minus rem delectus, similique itaque quos consequuntur dolore inventore. Non omnis obcaecati ratione laboriosam quaerat.";
-
 const QuestionState = props => {
   const initialState = {
     questions: null,

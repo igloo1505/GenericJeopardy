@@ -18,3 +18,6 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const POINTS_AWARDED = "POINTS_AWARDED";
+export const POINTS_LOST = "POINTS_LOST";
+export const SELECTED = "SELECTED";
