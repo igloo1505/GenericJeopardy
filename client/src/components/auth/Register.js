@@ -40,7 +40,6 @@ const Register = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-
     if (name === "" || email === "" || password === "") {
       setAlert("Please fill out form completely", "danger");
     } else if (password !== password2) {

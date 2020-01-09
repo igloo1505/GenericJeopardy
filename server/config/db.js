@@ -11,6 +11,7 @@ const connectDB = () => {
       useUnifiedTopology: true
     })
     .then(() => console.log("MongoDB Connected"))
+
     .catch(error => {
       console.error(error.message);
       process.exit(1);

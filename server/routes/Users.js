@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
+const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const bcrypt = require("bcryptjs");
-const User = require("../models/user");
 
-// @route POST api/users
+// @route POST users
 // @desc REGISTER user
 // access PUBLIC
 router.post(
@@ -32,6 +32,7 @@ router.post(
 
     try {
       let user = await User.findOne({ email: email });
+
       const masterCheck = await bcrypt.compare(
         master,
         config.get("masterPass")
@@ -76,7 +77,7 @@ router.post(
       );
     } catch (err) {
       console.error(err.msg);
-      res.status(500).send("server error");
+      res.status(500).send("server error: failed register");
     }
   }
 );
