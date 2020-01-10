@@ -65,7 +65,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: "Dewey Jeopardy"
+  title: "Don't forget title"
 };
 
 export default Navbar;

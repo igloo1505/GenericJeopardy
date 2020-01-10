@@ -1,11 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
+import satisfied from "../../context/play/eligibleCategory";
 
 const QuestionForm = () => {
   const questionContext = useContext(QuestionContext);
   const { questions } = questionContext;
 
-  const { current, clearCurrent, updateQuestion } = questionContext;
+  const {
+    current,
+    clearCurrent,
+    updateQuestion,
+    filterQuestions,
+    filtered
+  } = questionContext;
 
   useEffect(() => {
     if (current !== null) {
@@ -58,9 +65,15 @@ const QuestionForm = () => {
       var catOutput = questions[i].category;
       if (DynamicArray.indexOf(catOutput) === -1) {
         DynamicArray.push(catOutput);
+        satisfied(questions, catOutput);
       }
     }
   }
+
+  // for (var index = 0; index < DynamicArray.length; index++) {
+  //   let DynCat = DynamicArray[index];
+  //   satisfied(questions, DynCat);
+  // }
 
   return (
     <form onSubmit={onSubmit}>
@@ -128,6 +141,11 @@ const QuestionForm = () => {
           </button>
         </div>
       )}
+      <div className="card">
+        {DynamicArray.map(cat => (
+          <div key={cat._id}>{cat} </div>
+        ))}
+      </div>
     </form>
   );
 };

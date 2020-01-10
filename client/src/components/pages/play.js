@@ -23,99 +23,127 @@ const Play = () => {
 
   return (
     <Fragment>
-      <div>
-        <h1>Play layout goes here</h1>
-      </div>
+      <h1>Main Grid Here</h1>
       <div className="mainGrid">
-        <div className="card-container bg-light" points="100">
-          <h3 className="text-primary">100</h3>
+        <div className="col1">
+          <div className="category1">
+            <h2>Category 1</h2>
+          </div>
+          <div className="card-container bg-primary" points="100">
+            <h3 className="text-light">100</h3>
+          </div>
+          <div className="card-container bg-primary" points="200">
+            <h3 className="text-light">200</h3>
+          </div>
+          <div className="card-container bg-primary" points="300">
+            <h3 className="text-light">300</h3>
+          </div>
+          <div className="card-container bg-primary" points="400">
+            <h3 className="text-light">400</h3>
+          </div>
+          <div className="card-container bg-primary" points="500">
+            <h3 className="text-light">500</h3>
+          </div>
         </div>
-        <div className="card-container bg-light" points="200">
-          <h3 className="text-primary">200</h3>
+        <div className="col2">
+          <div className="category2">
+            <h2>Category 2</h2>
+          </div>
+          <div className="card-container bg-primary" points="100">
+            <h3 className="text-light">100</h3>
+          </div>
+          <div className="card-container bg-primary" points="200">
+            <h3 className="text-light">200</h3>
+          </div>
+          <div className="card-container bg-primary" points="300">
+            <h3 className="text-light">300</h3>
+          </div>
+          <div className="card-container bg-primary" points="400">
+            <h3 className="text-light">400</h3>
+          </div>
+          <div className="card-container bg-primary" points="500">
+            <h3 className="text-light">500</h3>
+          </div>
         </div>
-        <div className="card-container bg-light" points="300">
-          <h3 className="text-primary">300</h3>
+        <div className="col3">
+          <div className="category3">
+            <h2>Category 3</h2>
+          </div>
+          <div className="card-container bg-primary" points="100">
+            <h3 className="text-light">100</h3>
+          </div>
+          <div className="card-container bg-primary" points="200">
+            <h3 className="text-light">200</h3>
+          </div>
+          <div className="card-container bg-primary" points="300">
+            <h3 className="text-light">300</h3>
+          </div>
+          <div className="card-container bg-primary" points="400">
+            <h3 className="text-light">400</h3>
+          </div>
+          <div className="card-container bg-primary" points="500">
+            <h3 className="text-light">500</h3>
+          </div>
         </div>
-        <div className="card-container bg-light" points="400">
-          <h3 className="text-primary">400</h3>
+        <div className="col4">
+          <div className="category4">
+            <h2>Category 4</h2>
+          </div>
+          <div className="card-container bg-primary" points="100">
+            <h3 className="text-light">100</h3>
+          </div>
+          <div className="card-container bg-primary" points="200">
+            <h3 className="text-light">200</h3>
+          </div>
+          <div className="card-container bg-primary" points="300">
+            <h3 className="text-light">300</h3>
+          </div>
+          <div className="card-container bg-primary" points="400">
+            <h3 className="text-light">400</h3>
+          </div>
+          <div className="card-container bg-primary" points="500">
+            <h3 className="text-light">500</h3>
+          </div>
         </div>
-        <div className="card-container bg-light" points="500">
-          <h3 className="text-primary">500</h3>
+        <div className="col5">
+          <div className="category5">
+            <h2>Category 5</h2>
+          </div>
+          <div className="card-container bg-primary" points="100">
+            <h3 className="text-light">100</h3>
+          </div>
+          <div className="card-container bg-primary" points="200">
+            <h3 className="text-light">200</h3>
+          </div>
+          <div className="card-container bg-primary" points="300">
+            <h3 className="text-light">300</h3>
+          </div>
+          <div className="card-container bg-primary" points="400">
+            <h3 className="text-light">400</h3>
+          </div>
+          <div className="card-container bg-primary" points="500">
+            <h3 className="text-light">500</h3>
+          </div>
         </div>
-        <div className="card-container bg-light" points="100">
-          <h3 className="text-primary">100</h3>
-        </div>
-        <div className="card-container bg-light" points="200">
-          <h3 className="text-primary">200</h3>
-        </div>
-        <div className="card-container bg-light" points="300">
-          <h3 className="text-primary">300</h3>
-        </div>
-        <div className="card-container bg-light" points="400">
-          <h3 className="text-primary">400</h3>
-        </div>
-        <div className="card-container bg-light" points="500">
-          <h3 className="text-primary">500</h3>
-        </div>
-        <div className="card-container bg-light" points="100">
-          <h3 className="text-primary">100</h3>
-        </div>
-        <div className="card-container bg-light" points="200">
-          <h3 className="text-primary">200</h3>
-        </div>
-        <div className="card-container bg-light" points="300">
-          <h3 className="text-primary">300</h3>
-        </div>
-        <div className="card-container bg-light" points="400">
-          <h3 className="text-primary">400</h3>
-        </div>
-        <div className="card-container bg-light" points="500">
-          <h3 className="text-primary">500</h3>
-        </div>
-        <div className="card-container bg-light" points="100">
-          <h3 className="text-primary">100</h3>
-        </div>
-        <div className="card-container bg-light" points="200">
-          <h3 className="text-primary">200</h3>
-        </div>
-        <div className="card-container bg-light" points="300">
-          <h3 className="text-primary">300</h3>
-        </div>
-        <div className="card-container bg-light" points="400">
-          <h3 className="text-primary">400</h3>
-        </div>
-        <div className="card-container bg-light" points="500">
-          <h3 className="text-primary">500</h3>
-        </div>
-        <div className="card-container bg-light" points="100">
-          <h3 className="text-primary">100</h3>
-        </div>
-        <div className="card-container bg-light" points="200">
-          <h3 className="text-primary">200</h3>
-        </div>
-        <div className="card-container bg-light" points="300">
-          <h3 className="text-primary">300</h3>
-        </div>
-        <div className="card-container bg-light" points="400">
-          <h3 className="text-primary">400</h3>
-        </div>
-        <div className="card-container bg-light" points="500">
-          <h3 className="text-primary">500</h3>
-        </div>
-        <div className="card-container bg-light" points="100">
-          <h3 className="text-primary">100</h3>
-        </div>
-        <div className="card-container bg-light" points="200">
-          <h3 className="text-primary">200</h3>
-        </div>
-        <div className="card-container bg-light" points="300">
-          <h3 className="text-primary">300</h3>
-        </div>
-        <div className="card-container bg-light" points="400">
-          <h3 className="text-primary">400</h3>
-        </div>
-        <div className="card-container bg-light" points="500">
-          <h3 className="text-primary">500</h3>
+        <div className="col6">
+          <div className="category6">
+            <h2>Category 6</h2>
+          </div>
+          <div className="card-container bg-primary" points="100">
+            <h3 className="text-light">100</h3>
+          </div>
+          <div className="card-container bg-primary" points="200">
+            <h3 className="text-light">200</h3>
+          </div>
+          <div className="card-container bg-primary" points="300">
+            <h3 className="text-light">300</h3>
+          </div>
+          <div className="card-container bg-primary" points="400">
+            <h3 className="text-light">400</h3>
+          </div>
+          <div className="card-container bg-primary" points="500">
+            <h3 className="text-light">500</h3>
+          </div>
         </div>
       </div>
     </Fragment>

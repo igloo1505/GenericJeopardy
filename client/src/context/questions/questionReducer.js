@@ -61,9 +61,7 @@ export default (state, action) => {
         ...state,
         filtered: state.questions.filter(question => {
           const regex = new RegExp(`${action.payload}`, "gi");
-          return (
-            question.category.match(regex) || question.question.match(regex)
-          );
+          return question.category.match(regex);
         })
       };
     case CLEAR_FILTER:

@@ -127,6 +127,7 @@ img {
   display: block;
   border: 1px solid grey;
   border-radius: 5px;
+
   padding: 25px;
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
@@ -235,14 +236,42 @@ img {
   grid-gap: 2rem;
 }
 .mainGrid {
-  width: 100%;
+  position: absolute;
+  left: 10vw;
+  right: 10vw;
+  width: 80vw;
   height: 70vh;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-gap: 5px;
+
+  grid-gap: 15px;
   grid-auto-flow: column;
+  padding-top: 15px;
+}
+.categoryRow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 15px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 80vw;
+  margin: 0;
+}
+.categoryRow {
+  padding-top: 15px;
+}
+
+.col1,
+.col2,
+.col3,
+.col4,
+.col5,
+.col6 {
+  display: grid;
+  grid-gap: 10px;
+  height: 70vh;
+  align-content: center;
 }
 
 .btn {
