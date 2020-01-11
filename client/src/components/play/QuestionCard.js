@@ -8,7 +8,7 @@ const QuestionCard = ({ question }) => {
   const { _id, category, points, answer } = question;
   return (
     <div className="card-container bg-light">
-      <h3 className="text-primary">{points}</h3>
+      <h3 className="text-primary">{question.quesiton}</h3>
     </div>
   );
 };
