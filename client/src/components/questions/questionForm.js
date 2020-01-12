@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
-import satisfied from "../../context/play/eligibleCategory";
+import { d_list, DynamicArray } from "../../context/play/eligibleCategory";
 
 const QuestionForm = () => {
   const questionContext = useContext(QuestionContext);
@@ -65,7 +65,7 @@ const QuestionForm = () => {
       var catOutput = questions[i].category;
       if (DynamicArray.indexOf(catOutput) === -1) {
         DynamicArray.push(catOutput);
-        satisfied(questions, catOutput);
+        d_list(questions, catOutput);
       }
     }
   }

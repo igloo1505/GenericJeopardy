@@ -43,9 +43,10 @@ img {
 /* Utilities */
 .container {
   max-width: 1100px;
+  width: 90%;
+  height: 100%;
   margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
+  padding-top: 2rem;
 }
 
 /* Text Styles*/
@@ -93,21 +94,27 @@ img {
 .question {
   grid-area: question;
 }
+
 .edit {
   grid-area: edit;
 }
+
 .category {
   grid-area: category;
 }
+
 .delete {
   grid-area: delete;
 }
+
 .points {
   grid-area: points;
 }
+
 .answer {
   grid-area: answer;
 }
+
 /* Cards */
 .card {
   padding: 1rem;
@@ -235,20 +242,21 @@ img {
   grid-template-columns: 2fr 3fr;
   grid-gap: 2rem;
 }
+
 .mainGrid {
-  position: absolute;
-  left: 10vw;
-  right: 10vw;
-  width: 80vw;
-  height: 70vh;
-  margin: 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 20vh;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 
   grid-gap: 15px;
   grid-auto-flow: column;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
+
 .categoryRow {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -258,6 +266,7 @@ img {
   width: 80vw;
   margin: 0;
 }
+
 .categoryRow {
   padding-top: 15px;
 }
@@ -319,6 +328,7 @@ img {
   display: inline-block;
   text-align: center;
 }
+
 .play-text {
   font-size: 5rem;
 }
@@ -454,6 +464,7 @@ h2,
 h3 {
   text-align: center;
 }
+
 .quote {
   text-align: center;
 }

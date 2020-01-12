@@ -28,6 +28,7 @@ const App = () => {
           <Router>
             <Fragment>
               <Navbar />
+
               <div className="container">
                 <Alerts />
                 <Switch>
