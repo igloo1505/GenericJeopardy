@@ -19,28 +19,23 @@ function Grid(props) {
     // eslint-disable-next-line
   }, []);
   d_list(questions);
-  console.log(props);
 
   const select = (points, cat) => {
-    console.log(props.detail);
-    console.log(cat);
-    console.log(points);
     let newArr = questions.filter(
       q => q.category == "Sample 1" && q.points == points
     );
-    console.log(newArr);
+
     if (newArr.length > 1) {
       let randomOutput = Math.floor(Math.random() * newArr.length);
       console.log(newArr[randomOutput]);
       let out = newArr[randomOutput];
-      props.setQuestion(out);
+      props.setQuestion({ out });
       props.detail();
       return out;
     } else {
       let out = newArr;
       props.setQuestion({ out });
       props.detail();
-      console.log(out);
     }
   };
 

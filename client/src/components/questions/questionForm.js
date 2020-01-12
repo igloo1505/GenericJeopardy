@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
-import { d_list, DynamicArray } from "../../context/play/eligibleCategory";
+import { d_list } from "../../context/play/eligibleCategory";
 
 const QuestionForm = () => {
   const questionContext = useContext(QuestionContext);
@@ -69,11 +69,6 @@ const QuestionForm = () => {
       }
     }
   }
-
-  // for (var index = 0; index < DynamicArray.length; index++) {
-  //   let DynCat = DynamicArray[index];
-  //   satisfied(questions, DynCat);
-  // }
 
   return (
     <form onSubmit={onSubmit}>

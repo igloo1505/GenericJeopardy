@@ -1,22 +1,17 @@
-import React, { useContext, Fragment, useEffect, useState } from "react";
+import React, { useContext, Fragment, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
 import PropTypes from "prop-types";
 
-const QuestionCard = props => {
-  useEffect(() => {
-    getQuestions();
-    // eslint-disable-next-line
-  }, []);
+const QuestionCard = ({ ...props }) => {
+  // useEffect(() => {
+  //   getQuestions();
+  //   // eslint-disable-next-line
+  // }, []);
   const questionContext = useContext(QuestionContext);
 
-  const {
-    deleteQuestion,
-    setCurrent,
-    clearCurrent,
-    questions,
-    getQuestions
-  } = questionContext;
-  console.log(props);
+  const { question, answer, category, points } = props.setQuestion.out[0];
+
+  console.log(question);
 
   // const { _id, category, points, answer } = question;
 

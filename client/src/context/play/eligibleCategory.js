@@ -12,11 +12,10 @@ export const d_list = questions => {
       if (DynamicArray.indexOf(catOutput) === -1) {
         DynamicArray.push(catOutput);
       }
-      console.log(DynamicArray);
     }
   }
 };
-export { DynamicArray };
+export default d_list;
 
 // for (var o = 0; o < DynamicArray; o++) {
 //   if (questions !== null) {

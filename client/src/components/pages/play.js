@@ -28,7 +28,7 @@ const Play = props => {
       {questionDetail ? (
         <QuestionCard
           grid={() => setQuestionDetails(false)}
-          setQuestion={props}
+          setQuestion={qSelected}
         />
       ) : (
         <Grid
