@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import PlayReducer from "./playReducer";
 import QuestionContext from "../questions/questionContext";
-import playContext from "./playContext";
+import PlayContext from "./playContext";
 import { SELECTED, POINTS_AWARDED, POINTS_LOST } from "../types";
 
 const PlayState = props => {
@@ -14,16 +14,22 @@ const PlayState = props => {
     used: null
   };
   const [state, dispatch] = useReducer(PlayReducer, initialState);
-  const questionContext = useContext(QuestionContext);
-  const { questions } = questionContext;
+  
+
   const chooseQuestion = () => {
-    dispatch({ type: SELECTED });
+    dispatch({ type: SELECTED, payload: });
   };
 
   return (
     <div>
       <PlayContext.Provider
-        value={{ selected: state.selected, chooseQuestion }}
+        value={{ 
+          selected: state.selected,
+          team1name: state.team1name,
+          team2name: state.team2name,
+          team1points: state.team1points,
+          team2points: state.team2points,
+          chooseQuestion }}
       >
         {props.children}
       </PlayContext.Provider>

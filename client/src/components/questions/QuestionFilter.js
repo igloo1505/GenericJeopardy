@@ -17,6 +17,7 @@ const QuestionFilter = () => {
       }
     }
   }
+
   useEffect(() => {
     if (filtered === null) {
       text.current.value = "";
