@@ -1,6 +1,4 @@
-import React, { useContext, Fragment, useEffect, useState } from "react";
-import QuestionContext from "../../context/questions/questionContext";
-import PropTypes from "prop-types";
+import React, { Fragment, useState } from "react";
 
 const QuestionCard = ({ ...props }) => {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -23,8 +21,6 @@ const QuestionCard = ({ ...props }) => {
 
   return (
     <Fragment>
-      <button onClick={() => props.grid()}>Go Back</button>
-
       <div className="Questioncard bg-light">
         <h3 className="text-primary text-left question">{question}</h3>
         <h5 className="text-dark text-left answer">

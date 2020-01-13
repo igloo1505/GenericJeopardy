@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/home";
@@ -21,18 +21,23 @@ if (localStorage.token) {
 }
 
 const App = () => {
+  const [play, setPlay] = useState(false);
   return (
     <AuthState>
       <QuestionState>
         <AlertState>
           <Router>
             <Fragment>
-              <Navbar />
-
+              <Navbar play={play} />
               <div className="container">
                 <Alerts />
                 <Switch>
-                  <PrivateRoute exact path="/" component={Home} />
+                  <PrivateRoute
+                    exact
+                    path="/"
+                    component={Home}
+                    play={setPlay}
+                  />
                   <Route exact path="/about" component={About} />
                   <PrivateRoute exact path="/admin" component={Admin} />
                   <Route exact path="/register" component={Register} />

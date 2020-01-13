@@ -3,7 +3,7 @@ import AuthContext from "../../context/auth/authContext";
 import quotes from "../../context/play/quotes";
 import PlayButton from "../play/PlayButton";
 
-const Home = () => {
+const Home = ({ ...props }) => {
   const authContext = useContext(AuthContext);
   useEffect(() => {
     authContext.loadUser();
@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div>
-      <PlayButton />
+      <PlayButton onClick={() => props.setPlay(true)} />
     </div>
   );
 };

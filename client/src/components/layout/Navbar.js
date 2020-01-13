@@ -2,9 +2,10 @@ import React, { Fragment, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
+import ScoreCard from "../play/ScoreCard";
 import QuestionContext from "../../context/questions/questionContext";
 
-const Navbar = ({ title, icon }) => {
+const Navbar = ({ title, icon, ...props }) => {
   const authContext = useContext(AuthContext);
   const questionContext = useContext(QuestionContext);
   const { clearQuestion } = questionContext;
@@ -45,6 +46,7 @@ const Navbar = ({ title, icon }) => {
         <i className={icon} />
         {title}
       </h1>
+      {isAuthenticated ? <ScoreCard /> : ""}
       <ul>
         <li>
           <Link to="/">Home</Link>
