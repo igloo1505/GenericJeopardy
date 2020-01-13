@@ -6,13 +6,7 @@ const QuestionForm = () => {
   const questionContext = useContext(QuestionContext);
   const { questions } = questionContext;
 
-  const {
-    current,
-    clearCurrent,
-    updateQuestion,
-    filterQuestions,
-    filtered
-  } = questionContext;
+  const { current, clearCurrent, updateQuestion } = questionContext;
 
   useEffect(() => {
     if (current !== null) {

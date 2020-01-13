@@ -1,22 +1,10 @@
-import React, { useContext, useRef, useEffect, useState } from "react";
-
+import React, { useContext, useRef, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
-import QuestionState from "../../context/questions/QuestionState";
 
-const QuestionFilter = () => {
+const QuestionFilter = ({ DynamicArray }) => {
   const questionContext = useContext(QuestionContext);
   const text = useRef("");
-  const { filterQuestions, clearFilter, filtered, questions } = questionContext;
-
-  let DynamicArray = [];
-  if (questions) {
-    for (var i = 0; i < questions.length; i++) {
-      var catOutput = questions[i].category;
-      if (DynamicArray.indexOf(catOutput) == -1) {
-        DynamicArray.push(catOutput);
-      }
-    }
-  }
+  const { filterQuestions, clearFilter, filtered } = questionContext;
 
   useEffect(() => {
     if (filtered === null) {

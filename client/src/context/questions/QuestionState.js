@@ -13,10 +13,7 @@ import {
   CLEAR_FILTER,
   QUESTION_ERROR,
   GET_QUESTIONS,
-  CLEAR_ERRORS,
-  CLEAR_QUESTIONS,
-  SET_ALERT,
-  REMOVE_ALERT
+  CLEAR_QUESTIONS
 } from "../types";
 
 const QuestionState = props => {

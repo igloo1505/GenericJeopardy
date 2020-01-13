@@ -22,13 +22,16 @@ if (localStorage.token) {
 
 const App = () => {
   const [play, setPlay] = useState(false);
+  let [onePoints, setOnePoints] = useState(0);
+  let [twoPoints, setTwoPoints] = useState(0);
+
   return (
     <AuthState>
       <QuestionState>
         <AlertState>
           <Router>
             <Fragment>
-              <Navbar play={play} />
+              <Navbar play={play} onePoints={onePoints} twoPoints={twoPoints} />
               <div className="container">
                 <Alerts />
                 <Switch>
@@ -42,7 +45,15 @@ const App = () => {
                   <PrivateRoute exact path="/admin" component={Admin} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
-                  <PrivateRoute exact path="/play" component={Play} />
+                  <PrivateRoute
+                    exact
+                    path="/play"
+                    component={Play}
+                    setOnePoints={setOnePoints}
+                    setTwoPoints={setTwoPoints}
+                    onePoints={onePoints}
+                    twoPoints={twoPoints}
+                  />
                 </Switch>
               </div>
             </Fragment>

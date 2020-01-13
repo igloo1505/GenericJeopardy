@@ -9,7 +9,7 @@ const Navbar = ({ title, icon, ...props }) => {
   const authContext = useContext(AuthContext);
   const questionContext = useContext(QuestionContext);
   const { clearQuestion } = questionContext;
-  const { isAuthenticated, logoutUser, user } = authContext;
+  const { isAuthenticated, logoutUser } = authContext;
 
   const onLogout = () => {
     logoutUser();

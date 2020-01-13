@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, Fragment } from "react";
 import AuthContext from "../../context/auth/authContext";
-import PropTypes from "prop-types";
+
 import QuestionContext from "../../context/questions/questionContext";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 import { d_list } from "../../context/play/eligibleCategory";
 
 function Grid(props) {
   const questionContext = useContext(QuestionContext);
-  const { questions, getQuestions, loading } = questionContext;
+  const { questions, getQuestions } = questionContext;
   const authContext = useContext(AuthContext);
   useEffect(() => {
     authContext.loadUser();
@@ -22,7 +22,7 @@ function Grid(props) {
 
   const select = (points, cat) => {
     let newArr = questions.filter(
-      q => q.category == "Sample 1" && q.points == points
+      q => q.category === "Sample 1" && q.points === points
     );
 
     if (newArr.length > 1) {

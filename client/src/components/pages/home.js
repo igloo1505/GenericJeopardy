@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
-import quotes from "../../context/play/quotes";
+// import quotes from "../../context/play/quotes";
 import PlayButton from "../play/PlayButton";
 
 const Home = ({ ...props }) => {
@@ -9,9 +9,9 @@ const Home = ({ ...props }) => {
     authContext.loadUser();
     // eslint-disable-next-line
   }, []);
-  let ran = Math.random();
-  let ranIndex = Math.floor(ran * quotes.length);
-  let quote = quotes[ranIndex];
+  // let ran = Math.random();
+  // let ranIndex = Math.floor(ran * quotes.length);
+  // let quote = quotes[ranIndex];
 
   return (
     <div>

@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ScoreCard = ({ ...props }) => {
-  let [onePoints, setOnePoints] = useState(0);
-  let [twoPoints, setTwoPoints] = useState(0);
   return (
     <div>
-      <h4>Team 1 : {onePoints}</h4>
-      <h4>Team 2 : {twoPoints}</h4>
+      <h4>Team 1 : {props.pointsOne}</h4>
+      <h4>Team 2 : {props.pointsTwo}</h4>
     </div>
   );
 };

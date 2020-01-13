@@ -1,8 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import QuestionContext from "../../context/questions/questionContext";
-
-let sortedArray = [];
-let eligible = [];
+// let sortedArray = [];
+// let eligible = [];
 let DynamicArray = [];
 
 export const d_list = questions => {
@@ -17,7 +14,6 @@ export const d_list = questions => {
 };
 export default d_list;
 
-// for (var o = 0; o < DynamicArray; o++) {
 //   if (questions !== null) {
 //     sortedArray = questions.filter(q => q.category === DynamicArray[0]);
 //     console.log(sortedArray);

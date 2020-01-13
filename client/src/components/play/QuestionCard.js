@@ -1,23 +1,37 @@
 import React, { Fragment, useState } from "react";
 
-const QuestionCard = ({ ...props }) => {
+const QuestionCard = ({
+  setQuestion,
+  setOnePoints,
+  setTwoPoints,
+  onePoints,
+  twoPoints,
+  ...props
+}) => {
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const { question, answer, category, points } = props.setQuestion.out[0];
+  const { question, answer, points } = setQuestion.out[0];
 
   console.log(question);
 
-  const Test = e => {
-    {
-      console.log("test ran");
-    }
-  };
-
   window.addEventListener("keyup", function(e) {
-    if (e.code == "Space") {
+    if (e.code === "Space") {
       setShowAnswer(true);
     }
   });
+
+  const TeamOnePlus = () => setOnePoints(points);
+
+  const TeamTwoPlus = e => {
+    debugger;
+    setTwoPoints({ points });
+  };
+  const TeamOneMinus = e => {
+    setOnePoints({ points });
+  };
+  const TeamTwoMinus = e => {
+    setTwoPoints({ points });
+  };
 
   return (
     <Fragment>
@@ -26,16 +40,28 @@ const QuestionCard = ({ ...props }) => {
         <h5 className="text-dark text-left answer">
           {showAnswer ? answer : ""}
         </h5>
-        <button className="btn btn-success btn-sm TeamTwoUp" onClick={Test}>
+        <button
+          className="btn btn-success btn-sm TeamTwoUp"
+          onClick={TeamTwoPlus}
+        >
           <h5>Team Two +</h5>
         </button>
-        <button className="btn btn-danger btn-sm TeamTwoDown" onClick={Test}>
+        <button
+          className="btn btn-danger btn-sm TeamTwoDown"
+          onClick={TeamTwoMinus}
+        >
           <h5>Team Two -</h5>
         </button>
-        <button className="btn btn-danger btn-sm TeamOneDown" onClick={Test}>
+        <button
+          className="btn btn-danger btn-sm TeamOneDown"
+          onClick={TeamOneMinus}
+        >
           <h5>Team One -</h5>
         </button>
-        <button className="btn btn-success btn-sm TeamOneUp" onClick={Test}>
+        <button
+          className="btn btn-success btn-sm TeamOneUp"
+          onClick={TeamOnePlus}
+        >
           <h5>Team One +</h5>
         </button>
       </div>
