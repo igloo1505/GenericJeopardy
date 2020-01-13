@@ -23,7 +23,6 @@ const QuestionCard = ({ ...props }) => {
 
   return (
     <Fragment>
-      <h1>Switched to card here</h1>
       <button onClick={() => props.grid()}>Go Back</button>
 
       <div className="Questioncard bg-light">
