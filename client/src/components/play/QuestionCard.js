@@ -1,18 +1,20 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useContext } from "react";
+import PlayContext from "../../context/play/playContext";
 
-const QuestionCard = ({
-  setQuestion,
-  setOnePoints,
-  setTwoPoints,
-  onePoints,
-  twoPoints,
-  ...props
-}) => {
+const QuestionCard = props => {
+  const playContext = useContext(PlayContext);
+  const {
+    pointsAwardedOne,
+    pointsAwardedTwo,
+    pointsLostOne,
+    pointsLostTwo
+  } = playContext;
+
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const { question, answer, points } = setQuestion.out[0];
+  const { question, answer, points } = props.setQuestion.out[0];
 
-  console.log(question);
+  // console.log(question);
 
   window.addEventListener("keyup", function(e) {
     if (e.code === "Space") {
@@ -21,19 +23,20 @@ const QuestionCard = ({
   });
 
   const TeamOnePlus = () => {
-    // setOnePoints(points);
-    props.reset(false);
+    pointsAwardedOne(points);
+    props.grid();
   };
-
-  const TeamTwoPlus = e => {
-    debugger;
-    setTwoPoints({ points });
+  const TeamOneMinus = () => {
+    pointsLostOne(points);
+    props.grid();
   };
-  const TeamOneMinus = e => {
-    setOnePoints({ points });
+  const TeamTwoPlus = () => {
+    pointsAwardedTwo(points);
+    props.grid();
   };
-  const TeamTwoMinus = e => {
-    setTwoPoints({ points });
+  const TeamTwoMinus = () => {
+    pointsLostTwo(points);
+    props.grid();
   };
 
   return (

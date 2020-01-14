@@ -1,15 +1,14 @@
 import React, { useEffect, useContext } from "react";
 import QuestionContext from "../../context/questions/questionContext";
 
-const CategoryPassed = () => {
-  const questionContext = useContext(QuestionContext);
-  const { getQuestions, loading, questions } = questionContext;
-
-  useEffect(() => {
-    getQuestions();
-    // eslint-disable-next-line
-  }, []);
+const CategoryPassed = questions => {
+  // const questionContext = useContext(QuestionContext);
+  // const { getQuestions } = questionContext;
   debugger;
+  // useEffect(() => {
+  //   getQuestions();
+  //   // eslint-disable-next-line
+  // }, []);
 
   let PassedArray = [];
   let DynamicArray = [];

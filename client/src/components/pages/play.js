@@ -1,30 +1,25 @@
 import React, { useContext, useEffect, Fragment, useState } from "react";
 import AuthContext from "../../context/auth/authContext";
-import QuestionContext from "../../context/questions/questionContext";
+// import QuestionContext from "../../context/questions/questionContext";
+// import CategoryPassed from "../../context/play/eligibleCategory";
 import QuestionCard from "../play/QuestionCard";
 import Grid from "../play/Grid";
 
-const Play = ({
-  setOnePoints,
-  setTwoPoints,
-  onePoints,
-  twoPoints,
-  ...props
-}) => {
+const Play = ({ questions, ...props }) => {
+  // debugger;
   let [questionDetail, setQuestionDetails] = useState(false);
   let [qSelected, setQSelected] = useState(null);
 
-  const questionContext = useContext(QuestionContext);
-  const { getQuestions, questions } = questionContext;
+  // const questionContext = useContext(QuestionContext);
+
   const authContext = useContext(AuthContext);
 
   useEffect(() => {
     authContext.loadUser();
-
     // eslint-disable-next-line
   }, []);
 
-  getQuestions();
+  // CategoryPassed(questions);
 
   return (
     <Fragment>
@@ -32,8 +27,7 @@ const Play = ({
         <QuestionCard
           grid={() => setQuestionDetails(false)}
           setQuestion={qSelected}
-          question={questions}
-          reset={setQuestionDetails}
+          questions={questions}
           {...props}
         />
       ) : (

@@ -3,13 +3,13 @@ import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 
-const PlayButton = () => {
+const PlayButton = questions => {
   const authContext = useContext(AuthContext);
 
   const { isAuthenticated } = authContext;
   const guest = (
     <Fragment>
-      <h1 className="t">You must be logged in to play.</h1>
+      <h1>You must be logged in to play.</h1>
     </Fragment>
   );
 
@@ -17,7 +17,11 @@ const PlayButton = () => {
     <Fragment>
       <ul>
         <li>
-          <Link className="btn btn-lg btn-primary" to="/play">
+          <Link
+            className="btn btn-lg btn-primary"
+            to="/play"
+            questions={questions}
+          >
             <h1 className="play-text">Play</h1>
           </Link>
         </li>
