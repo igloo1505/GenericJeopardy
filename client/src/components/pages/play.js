@@ -17,15 +17,14 @@ const Play = ({
   const questionContext = useContext(QuestionContext);
   const { getQuestions, questions } = questionContext;
   const authContext = useContext(AuthContext);
+
   useEffect(() => {
     authContext.loadUser();
 
     // eslint-disable-next-line
   }, []);
-  useEffect(() => {
-    getQuestions();
-    // eslint-disable-next-line
-  }, []);
+
+  getQuestions();
 
   return (
     <Fragment>
