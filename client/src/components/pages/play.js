@@ -15,10 +15,11 @@ const Play = ({
   let [qSelected, setQSelected] = useState(null);
 
   const questionContext = useContext(QuestionContext);
-  const { getQuestions } = questionContext;
+  const { getQuestions, questions } = questionContext;
   const authContext = useContext(AuthContext);
   useEffect(() => {
     authContext.loadUser();
+
     // eslint-disable-next-line
   }, []);
   useEffect(() => {
@@ -32,16 +33,15 @@ const Play = ({
         <QuestionCard
           grid={() => setQuestionDetails(false)}
           setQuestion={qSelected}
+          question={questions}
+          reset={setQuestionDetails}
           {...props}
-          setOnePoints={{ setOnePoints }}
-          setTwoPoints={props.setTwoPoints}
-          onePoints={onePoints}
-          twoPoints={twoPoints}
         />
       ) : (
         <Grid
           detail={() => setQuestionDetails(true)}
           setQuestion={setQSelected}
+          question={questions}
         />
       )}
     </Fragment>

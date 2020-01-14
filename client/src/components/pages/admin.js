@@ -27,7 +27,7 @@ const Admin = () => {
   return (
     <div className="grid-2">
       <div>
-        <QuestionForm />
+        <QuestionForm DynamicArray={DynamicArray} />
       </div>
       <div>
         <QuestionFilter DynamicArray={DynamicArray} />

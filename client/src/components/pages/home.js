@@ -9,9 +9,6 @@ const Home = ({ ...props }) => {
     authContext.loadUser();
     // eslint-disable-next-line
   }, []);
-  // let ran = Math.random();
-  // let ranIndex = Math.floor(ran * quotes.length);
-  // let quote = quotes[ranIndex];
 
   return (
     <div>

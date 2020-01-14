@@ -1,10 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
-import { d_list } from "../../context/play/eligibleCategory";
+import uuid from "uuid";
 
-const QuestionForm = () => {
+const QuestionForm = ({ DynamicArray }) => {
   const questionContext = useContext(QuestionContext);
-  const { questions } = questionContext;
 
   const { current, clearCurrent, updateQuestion } = questionContext;
 
@@ -27,7 +26,7 @@ const QuestionForm = () => {
     category: "",
     points: Number
   });
-  const { answer, category, points } = question;
+  const { answer, category } = question;
 
   const onChange = e =>
     setQuestion({ ...question, [e.target.name]: e.target.value });
@@ -52,17 +51,6 @@ const QuestionForm = () => {
   const clearAll = () => {
     clearCurrent();
   };
-
-  let DynamicArray = [];
-  if (questions !== null) {
-    for (var i = 0; i < questions.length; i++) {
-      var catOutput = questions[i].category;
-      if (DynamicArray.indexOf(catOutput) === -1) {
-        DynamicArray.push(catOutput);
-        d_list(questions, catOutput);
-      }
-    }
-  }
 
   return (
     <form onSubmit={onSubmit}>
@@ -112,7 +100,6 @@ const QuestionForm = () => {
         placeholder="Points"
         name="points"
         list="pointsData"
-        value={points}
         onChange={onChange}
         required
       />
@@ -132,7 +119,7 @@ const QuestionForm = () => {
       )}
       <div className="card">
         {DynamicArray.map(cat => (
-          <div key={cat._id}>{cat} </div>
+          <div key={uuid()}>{cat} </div>
         ))}
       </div>
     </form>

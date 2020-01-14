@@ -20,7 +20,10 @@ const QuestionCard = ({
     }
   });
 
-  const TeamOnePlus = () => setOnePoints(points);
+  const TeamOnePlus = () => {
+    // setOnePoints(points);
+    props.reset(false);
+  };
 
   const TeamTwoPlus = e => {
     debugger;

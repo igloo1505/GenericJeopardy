@@ -3,7 +3,7 @@ import AuthContext from "../../context/auth/authContext";
 
 import QuestionContext from "../../context/questions/questionContext";
 
-import { d_list } from "../../context/play/eligibleCategory";
+// import { d_list } from "../../context/play/eligibleCategory";
 
 function Grid(props) {
   const questionContext = useContext(QuestionContext);
@@ -18,7 +18,6 @@ function Grid(props) {
 
     // eslint-disable-next-line
   }, []);
-  d_list(questions);
 
   const select = (points, cat) => {
     let newArr = questions.filter(
