@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer } from "react";
 import PlayReducer from "./playReducer";
 import PlayContext from "./playContext";
 
@@ -13,7 +13,7 @@ import {
 
 const PlayState = props => {
   const initialState = {
-    selected: null,
+    selected: [],
     team1points: 0,
     team2points: 0,
     team1name: "",
@@ -23,8 +23,8 @@ const PlayState = props => {
 
   const [state, dispatch] = useReducer(PlayReducer, initialState);
 
-  const chooseQuestion = key => {
-    dispatch({ type: SELECTED, payload: key });
+  const chooseQuestion = id => {
+    dispatch({ type: SELECTED, payload: id });
   };
 
   const pointsAwardedOne = points => {
@@ -42,7 +42,7 @@ const PlayState = props => {
     dispatch({ type: POINTS_LOST_TWO, payload: points });
   };
 
-  const reset = () => {
+  const resetGame = () => {
     dispatch({ type: RESET });
   };
 
@@ -59,7 +59,7 @@ const PlayState = props => {
         pointsAwardedTwo,
         pointsLostOne,
         pointsLostTwo,
-        reset
+        resetGame
       }}
     >
       {props.children}

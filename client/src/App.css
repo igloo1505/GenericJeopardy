@@ -146,19 +146,19 @@ img {
     "TeamTwoUp TeamTwoDown . TeamOneUp TeamOneDown";
 }
 
-.Questioncard > button {
+.Questioncard>button {
   max-width: 100px;
   font-size: 1em;
   /* margin: 5px; */
   margin: auto 5px 0 5px;
 }
 
-.Questioncard > .question {
+.Questioncard>.question {
   font-size: 2em;
   line-height: 1.3em;
 }
 
-.Questioncard > .answer {
+.Questioncard>.answer {
   vertical-align: middle;
   font-size: 1.3em;
 }
@@ -191,6 +191,7 @@ img {
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
 }
+
 .card-container-selected {
   display: block;
   border: 1px solid grey;
@@ -388,6 +389,10 @@ img {
   border-radius: 15px;
   display: inline-block;
   text-align: center;
+}
+
+.reset-btn {
+  float: right;
 }
 
 .play-text {

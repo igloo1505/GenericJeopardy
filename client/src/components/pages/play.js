@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, Fragment, useState } from "react";
 import AuthContext from "../../context/auth/authContext";
-// import PlayContext from "../../context/play/playContext";
-
 // import CategoryPassed from "../../context/play/eligibleCategory";
 import QuestionCard from "../play/QuestionCard";
 import Grid from "../play/Grid";
 
 const Play = ({ questions, ...props }) => {
-  const [selected, setSelected] = useState([]);
   let [questionDetail, setQuestionDetails] = useState(false);
   let [qSelected, setQSelected] = useState(null);
 
@@ -31,9 +28,9 @@ const Play = ({ questions, ...props }) => {
       ) : (
         <Grid
           detail={() => setQuestionDetails(true)}
-          selected={selected}
+          // selected={selected}
           setQuestion={setQSelected}
-          setSelected={setSelected}
+          // setSelected={setSelected}
           question={questions}
         />
       )}

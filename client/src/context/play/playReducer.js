@@ -1,4 +1,5 @@
 import {
+  SELECTED,
   POINTS_AWARDED_ONE,
   POINTS_AWARDED_TWO,
   POINTS_LOST_ONE,
@@ -8,6 +9,11 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
+    case SELECTED:
+      return {
+        ...state,
+        selected: state.selected.concat(action.payload)
+      };
     case POINTS_AWARDED_ONE:
       return {
         ...state,
@@ -31,7 +37,7 @@ export default (state, action) => {
     case RESET:
       return {
         ...state,
-        selected: null,
+        selected: [],
         team1points: 0,
         team2points: 0,
         team1name: "",
