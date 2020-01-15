@@ -3,7 +3,6 @@ import {
   POINTS_AWARDED_TWO,
   POINTS_LOST_ONE,
   POINTS_LOST_TWO,
-  SELECTED,
   RESET
 } from "../types";
 

@@ -1,16 +1,8 @@
-import React, { useContext, useEffect, Fragment, useState } from "react";
+import React, { useContext, useEffect, Fragment } from "react";
 import AuthContext from "../../context/auth/authContext";
 import QuestionContext from "../../context/questions/questionContext";
 
-let selected = [];
-console.log(selected);
-console.log(selected.indexOf("16") == -1);
-
-let classOut =
-  selected.indexOf("16") !== -1
-    ? "card-container-selected bg-light"
-    : "card-container bg-primary";
-function Grid(props) {
+function Grid({ selected, setSelected, ...props }) {
   const questionContext = useContext(QuestionContext);
   const { questions, getQuestions } = questionContext;
   const authContext = useContext(AuthContext);
@@ -23,18 +15,15 @@ function Grid(props) {
     // eslint-disable-next-line
   }, []);
 
-  const change = id => {
-    debugger;
-    var x = document.getElementById(id);
-    selected.push(id);
-    console.log(selected);
-  };
-
   const select = (points, cat, id) => {
+    debugger;
+    setSelected([...selected, id]);
+    console.log(selected);
+
     let newArr = questions.filter(
       q => q.category === "Sample 1" && q.points === points
     );
-    change(id);
+
     if (newArr.length > 1) {
       let randomOutput = Math.floor(Math.random() * newArr.length);
       console.log(newArr[randomOutput]);
@@ -46,7 +35,6 @@ function Grid(props) {
       let out = newArr;
       props.setQuestion({ out });
       props.detail();
-      console.log(points, cat);
     }
   };
 
@@ -58,7 +46,7 @@ function Grid(props) {
             <h2>Category 1</h2>
           </div>
           <div
-            className={classOut}
+            className={"card-container bg-primary"}
             points="100"
             id="1"
             onClick={e => select(100, "cat1", e.target.id)}
@@ -66,10 +54,13 @@ function Grid(props) {
             <h3 className="text-light">100</h3>
           </div>
           <div
-            className="square card-container bg-primary"
+            className={
+              "card-container" +
+              (selected.includes(2) ? " bg-light" : " bg-primary")
+            }
             points="200"
             id="2"
-            onClick={e => select(200, "cat1", e.target.id)}
+            onClick={() => select(100, "cat1", 2)}
           >
             <h3 className="text-light">200</h3>
           </div>
