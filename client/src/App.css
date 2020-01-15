@@ -143,28 +143,25 @@ img {
     "question question question question question"
     "answer answer answer answer answer"
     "answer answer answer answer answer "
-    "TeamTwoUp TeamTwoDown . TeamOneUp TeamOneDown"
+    "TeamTwoUp TeamTwoDown . TeamOneUp TeamOneDown";
 }
 
-.Questioncard>button {
+.Questioncard > button {
   max-width: 100px;
   font-size: 1em;
   /* margin: 5px; */
   margin: auto 5px 0 5px;
-
 }
 
-.Questioncard>.question {
-
+.Questioncard > .question {
   font-size: 2em;
   line-height: 1.3em;
 }
 
-.Questioncard>.answer {
+.Questioncard > .answer {
   vertical-align: middle;
   font-size: 1.3em;
 }
-
 
 .TeamOneUp {
   grid-area: TeamOneUp;
@@ -189,6 +186,18 @@ img {
 
   padding: 25px;
   cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+.card-container-selected {
+  display: block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: aqua;
+  padding: 25px;
+  /* cursor: pointer; */
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   transform: translateZ(0);

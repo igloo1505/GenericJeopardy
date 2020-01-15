@@ -1,10 +1,15 @@
-import React, { useContext, useEffect, Fragment } from "react";
+import React, { useContext, useEffect, Fragment, useState } from "react";
 import AuthContext from "../../context/auth/authContext";
-
 import QuestionContext from "../../context/questions/questionContext";
 
-// import { d_list } from "../../context/play/eligibleCategory";
+let selected = [];
+console.log(selected);
+console.log(selected.indexOf("16") == -1);
 
+let classOut =
+  selected.indexOf("16") !== -1
+    ? "card-container-selected bg-light"
+    : "card-container bg-primary";
 function Grid(props) {
   const questionContext = useContext(QuestionContext);
   const { questions, getQuestions } = questionContext;
@@ -15,15 +20,21 @@ function Grid(props) {
   }, []);
   useEffect(() => {
     getQuestions();
-
     // eslint-disable-next-line
   }, []);
 
-  const select = (points, cat) => {
+  const change = id => {
+    debugger;
+    var x = document.getElementById(id);
+    selected.push(id);
+    console.log(selected);
+  };
+
+  const select = (points, cat, id) => {
     let newArr = questions.filter(
       q => q.category === "Sample 1" && q.points === points
     );
-
+    change(id);
     if (newArr.length > 1) {
       let randomOutput = Math.floor(Math.random() * newArr.length);
       console.log(newArr[randomOutput]);
@@ -35,6 +46,7 @@ function Grid(props) {
       let out = newArr;
       props.setQuestion({ out });
       props.detail();
+      console.log(points, cat);
     }
   };
 
@@ -46,37 +58,42 @@ function Grid(props) {
             <h2>Category 1</h2>
           </div>
           <div
-            className="card-container bg-primary"
-            points={100}
-            onClick={() => select(100, "cat1")}
+            className={classOut}
+            points="100"
+            id="1"
+            onClick={e => select(100, "cat1", e.target.id)}
           >
             <h3 className="text-light">100</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="200"
-            onClick={() => select(200, "cat1")}
+            id="2"
+            onClick={e => select(200, "cat1", e.target.id)}
           >
             <h3 className="text-light">200</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="300"
-            onClick={() => select(300, "cat1")}
+            id="3"
+            onClick={e => select(300, "cat1", e.target.id)}
           >
             <h3 className="text-light">300</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="400"
-            onClick={() => select(400, "cat1")}
+            id="4"
+            onClick={e => select(400, "cat1", e.target.id)}
           >
             <h3 className="text-light">400</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="500"
-            onClick={() => select(500, "cat1")}
+            id="5"
+            onClick={e => select(500, "cat1", e.target.id)}
           >
             <h3 className="text-light">500</h3>
           </div>
@@ -86,37 +103,42 @@ function Grid(props) {
             <h2>Category 2</h2>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="100"
-            onClick={() => select(100, "cat2")}
+            id="6"
+            onClick={e => select(100, "cat2", e.target.id)}
           >
             <h3 className="text-light">100</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="200"
-            onClick={() => select(200, "cat2")}
+            key="7"
+            onClick={e => select(200, "cat2", e.target.id)}
           >
             <h3 className="text-light">200</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="300"
-            onClick={() => select(300, "cat2")}
+            id="8"
+            onClick={e => select(300, "cat2", e.target.id)}
           >
             <h3 className="text-light">300</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="400"
-            onClick={() => select(400, "cat2")}
+            id="9"
+            onClick={e => select(400, "cat2", e.target.id)}
           >
             <h3 className="text-light">400</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="500"
-            onClick={() => select(500, "cat2")}
+            id="10"
+            onClick={e => select(500, "cat2", e.target.id)}
           >
             <h3 className="text-light">500</h3>
           </div>
@@ -126,37 +148,42 @@ function Grid(props) {
             <h2>Category 3</h2>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="100"
-            onClick={() => select(100, "cat3")}
+            id="11"
+            onClick={e => select(100, "cat3", e.target.id)}
           >
             <h3 className="text-light">100</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="200"
-            onClick={() => select(200, "cat3")}
+            id="12"
+            onClick={e => select(200, "cat3", e.target.id)}
           >
             <h3 className="text-light">200</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="300"
-            onClick={() => select(300, "cat3")}
+            id="13"
+            onClick={e => select(300, "cat3", e.target.id)}
           >
             <h3 className="text-light">300</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="400"
-            onClick={() => select(400, "cat3")}
+            id="14"
+            onClick={e => select(400, "cat3", e.target.id)}
           >
             <h3 className="text-light">400</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="500"
-            onClick={() => select(500, "cat3")}
+            id="15"
+            onClick={e => select(500, "cat3", e.target.id)}
           >
             <h3 className="text-light">500</h3>
           </div>
@@ -166,37 +193,42 @@ function Grid(props) {
             <h2>Category 4</h2>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="100"
-            onClick={() => select(100, "cat4")}
+            id="16"
+            onClick={e => select(100, "cat4", e.target.id)}
           >
             <h3 className="text-light">100</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="200"
-            onClick={() => select(200, "cat4")}
+            id="17"
+            onClick={e => select(200, "cat4", e.target.id)}
           >
             <h3 className="text-light">200</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="300"
-            onClick={() => select(300, "cat4")}
+            id="18"
+            onClick={e => select(300, "cat4", e.target.id)}
           >
             <h3 className="text-light">300</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="400"
-            onClick={() => select(400, "cat4")}
+            id="19"
+            onClick={e => select(400, "cat4", e.target.id)}
           >
             <h3 className="text-light">400</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="500"
-            onClick={() => select(500, "cat4")}
+            id="20"
+            onClick={e => select(500, "cat4", e.target.id)}
           >
             <h3 className="text-light">500</h3>
           </div>
@@ -206,37 +238,42 @@ function Grid(props) {
             <h2>Category 5</h2>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="100"
-            onClick={() => select(100, "cat5")}
+            id="21"
+            onClick={e => select(100, "cat5", e.target.id)}
           >
             <h3 className="text-light">100</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="200"
-            onClick={() => select(200, "cat5")}
+            id="22"
+            onClick={e => select(200, "cat5", e.target.id)}
           >
             <h3 className="text-light">200</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="300"
-            onClick={() => select(300, "cat5")}
+            id="23"
+            onClick={e => select(300, "cat5", e.target.id)}
           >
             <h3 className="text-light">300</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="400"
-            onClick={() => select(400, "cat5")}
+            id="24"
+            onClick={e => select(400, "cat5", e.target.id)}
           >
             <h3 className="text-light">400</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="500"
-            onClick={() => select(500, "cat5")}
+            id="25"
+            onClick={e => select(500, "cat5", e.target.id)}
           >
             <h3 className="text-light">500</h3>
           </div>
@@ -246,37 +283,42 @@ function Grid(props) {
             <h2>Category 6</h2>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="100"
-            onClick={() => select(100, "cat6")}
+            id="26"
+            onClick={e => select(100, "cat6", e.target.id)}
           >
             <h3 className="text-light">100</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="200"
-            onClick={() => select(200, "cat6")}
+            id="27"
+            onClick={e => select(200, "cat6", e.target.id)}
           >
             <h3 className="text-light">200</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="300"
-            onClick={() => select(300, "cat6")}
+            id="28"
+            onClick={e => select(300, "cat6", e.target.id)}
           >
             <h3 className="text-light">300</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="400"
-            onClick={() => select(400, "cat6")}
+            id="29"
+            onClick={e => select(400, "cat6", e.target.id)}
           >
             <h3 className="text-light">400</h3>
           </div>
           <div
-            className="card-container bg-primary"
+            className="square card-container bg-primary"
             points="500"
-            onClick={() => select(500, "cat6")}
+            id="30"
+            onClick={e => select(500, "cat6", e.target.id)}
           >
             <h3 className="text-light">500</h3>
           </div>

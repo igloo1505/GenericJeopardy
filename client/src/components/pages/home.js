@@ -13,7 +13,7 @@ const Home = ({ ...props }) => {
   }, []);
   useEffect(() => {
     getQuestions();
-  });
+  }, []);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import PlayReducer from "./playReducer";
 import PlayContext from "./playContext";
 
@@ -20,6 +20,7 @@ const PlayState = props => {
     team2name: "",
     used: false
   };
+
   const [state, dispatch] = useReducer(PlayReducer, initialState);
 
   const chooseQuestion = key => {

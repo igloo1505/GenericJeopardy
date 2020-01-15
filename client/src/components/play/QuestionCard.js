@@ -14,17 +14,18 @@ const QuestionCard = props => {
 
   const { question, answer, points } = props.setQuestion.out[0];
 
-  // console.log(question);
-
   window.addEventListener("keyup", function(e) {
     if (e.code === "Space") {
       setShowAnswer(true);
     }
   });
 
-  const TeamOnePlus = () => {
-    pointsAwardedOne(points);
-    props.grid();
+  // Yes, I know this could have been more efficient
+  const TeamOnePlus = e => {
+    if (showAnswer === true) {
+      pointsAwardedOne(points);
+      props.grid();
+    }
   };
   const TeamOneMinus = () => {
     pointsLostOne(points);
