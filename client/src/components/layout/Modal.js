@@ -4,8 +4,8 @@ import Modal from "react-bootstrap/Modal";
 import PlayContext from "../../context/play/playContext";
 
 const ModalTeam = () => {
-  // const playContext = useContext(PlayContext);
-  // const { setTeams } = playContext;
+  const playContext = useContext(PlayContext);
+  const { setTeams } = playContext;
   const [isOpen, setIsOpen] = useState(false);
 
   const showModal = () => {
@@ -16,10 +16,10 @@ const ModalTeam = () => {
     setIsOpen(false);
   };
   const onSubmit = e => {
-    debugger;
-
     let teamOne = document.getElementById("teamOne").value;
-    console.log(teamOne);
+    let teamTwo = document.getElementById("teamTwo").value;
+    setTeams(teamOne, teamTwo);
+    hideModal();
   };
   return (
     <Fragment>

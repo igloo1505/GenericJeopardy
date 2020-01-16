@@ -17,15 +17,15 @@ const PlayState = props => {
     selected: [],
     team1points: 0,
     team2points: 0,
-    team1name: "",
-    team2name: "",
+    team1name: "Team One",
+    team2name: "Team Two",
     used: false
   };
 
   const [state, dispatch] = useReducer(PlayReducer, initialState);
 
   const setTeams = (teamOne, teamTwo) => {
-    dispatch({ type: SET_TEAMS, payload: teamOne, teamTwo });
+    dispatch({ type: SET_TEAMS, payload: { teamOne, teamTwo } });
   };
 
   const chooseQuestion = id => {

@@ -1,9 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
 import QuestionContext from "../../context/questions/questionContext";
-import Modal from "react-bootstrap/Modal";
-
-// import "bootstrap/dist/css/bootstrap.min.css";
+// import Modal from "react-bootstrap/Modal";
 import ModalTeam from "../layout/Modal";
 import PlayButton from "../play/PlayButton";
 import PlayContext from "../../context/play/playContext";
@@ -23,12 +21,6 @@ const Home = ({ ...props }) => {
     getQuestions();
     // eslint-disable-next-line
   }, []);
-  // const onSubmit = e => {
-  //   // debugger;
-  //   // e.preventDefault();
-
-  //   console.log("teamOne");
-  // };
 
   return (
     <div>
