@@ -18,11 +18,11 @@ const About = () => {
 
       <p>
         Once all point values of 100 through 500 are met the category icon will
-        turn green and the category will be added to the randomized list. If it
-        is red, there is at least one missing point value. There is no reason to
-        stop at 5 questions though. If more are added the computer will pick out
-        5 randomly accord to their point value and insert them, so no game will
-        repeat itself.
+        be added to the list of completed categories below the admin form and
+        than 6 categories will be randomly picked and added to the game. If more
+        than 5 questions per category are added, the computer will pick out 5
+        randomly according to their point value and insert them, so with enough
+        questions, no game will repeat itself exactly.
       </p>
     </div>
   );

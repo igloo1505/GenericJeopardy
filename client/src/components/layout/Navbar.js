@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import ScoreCard from "../play/ScoreCard";
 import QuestionContext from "../../context/questions/questionContext";
+import "../../App.css";
 
 const Navbar = ({ title, icon, ...props }) => {
   const authContext = useContext(AuthContext);
@@ -41,7 +42,7 @@ const Navbar = ({ title, icon, ...props }) => {
   );
 
   return (
-    <div className="navbar bg-primary">
+    <div className="navbar bg-prime">
       <h1>
         <i className={icon} />
         {title}

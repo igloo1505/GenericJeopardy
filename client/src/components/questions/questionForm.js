@@ -54,7 +54,7 @@ const QuestionForm = ({ DynamicArray }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2 className="text-primary">
+      <h2 className="text-prime">
         {current ? "Edit Question" : "Add Question"}
       </h2>
       <input
@@ -107,7 +107,7 @@ const QuestionForm = ({ DynamicArray }) => {
         <input
           type="submit"
           value={current ? "Update" : "Add Question"}
-          className="btn btn-primary btn-block"
+          className="btn btn-prime btn-block"
         />
       </div>
       {current && (

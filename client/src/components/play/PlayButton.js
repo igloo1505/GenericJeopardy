@@ -18,7 +18,7 @@ const PlayButton = questions => {
       <ul>
         <li>
           <Link
-            className="btn btn-lg btn-primary"
+            className="btn btn-lg btn-prime"
             to="/play"
             questions={questions}
           >

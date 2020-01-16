@@ -14,13 +14,13 @@ const QuestionItem = ({ question }) => {
 
   return (
     <div className="card bg-light">
-      <h3 className="text-primary text-left question">{question.question}</h3>
+      <h3 className="text-prime text-left question">{question.question}</h3>
       <h5 className="text-dark text-left answer">{answer}</h5>
-      <div style={{ float: "right" }} className="badge badge-success points">
+      <div style={{ float: "right" }} className="badgey badgey-success points">
         {points}
       </div>
 
-      <div style={{ float: "right" }} className="badge badge-light category">
+      <div style={{ float: "right" }} className="badgey badgey-light category">
         {category}
       </div>
 

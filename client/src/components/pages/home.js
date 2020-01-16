@@ -1,6 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
 import QuestionContext from "../../context/questions/questionContext";
+import Modal from "react-bootstrap/Modal";
+
+// import "bootstrap/dist/css/bootstrap.min.css";
+import ModalTeam from "../layout/Modal";
 import PlayButton from "../play/PlayButton";
 import PlayContext from "../../context/play/playContext";
 
@@ -14,13 +18,21 @@ const Home = ({ ...props }) => {
     authContext.loadUser();
     // eslint-disable-next-line
   }, []);
-  getQuestions();
-  // useEffect(() => {
 
-  // });
+  useEffect(() => {
+    getQuestions();
+    // eslint-disable-next-line
+  }, []);
+  // const onSubmit = e => {
+  //   // debugger;
+  //   // e.preventDefault();
+
+  //   console.log("teamOne");
+  // };
 
   return (
     <div>
+      <ModalTeam />
       <button className="reset-btn btn btn-danger" onClick={() => resetGame()}>
         Reset
       </button>

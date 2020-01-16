@@ -43,32 +43,20 @@ const QuestionCard = props => {
   return (
     <Fragment>
       <div className="Questioncard bg-light">
-        <h3 className="text-primary text-left question">{question}</h3>
+        <h3 className="text-prime text-left question">{question}</h3>
         <h5 className="text-dark text-left answer">
           {showAnswer ? answer : ""}
         </h5>
-        <button
-          className="btn btn-success btn-sm TeamTwoUp"
-          onClick={TeamTwoPlus}
-        >
+        <button className="btn btn-success  TeamTwoUp" onClick={TeamTwoPlus}>
           <h5>Team Two +</h5>
         </button>
-        <button
-          className="btn btn-danger btn-sm TeamTwoDown"
-          onClick={TeamTwoMinus}
-        >
+        <button className="btn btn-danger  TeamTwoDown" onClick={TeamTwoMinus}>
           <h5>Team Two -</h5>
         </button>
-        <button
-          className="btn btn-danger btn-sm TeamOneDown"
-          onClick={TeamOneMinus}
-        >
+        <button className="btn btn-danger  TeamOneDown" onClick={TeamOneMinus}>
           <h5>Team One -</h5>
         </button>
-        <button
-          className="btn btn-success btn-sm TeamOneUp"
-          onClick={TeamOnePlus}
-        >
+        <button className="btn btn-success TeamOneUp" onClick={TeamOnePlus}>
           <h5>Team One +</h5>
         </button>
       </div>

@@ -4,11 +4,18 @@ import {
   POINTS_AWARDED_TWO,
   POINTS_LOST_ONE,
   POINTS_LOST_TWO,
+  SET_TEAMS,
   RESET
 } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
+    case SET_TEAMS:
+      return {
+        ...state,
+        team1name: action.payload.teamOne,
+        team2name: action.payload.teamTwo
+      };
     case SELECTED:
       return {
         ...state,

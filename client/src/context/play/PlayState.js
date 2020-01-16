@@ -8,6 +8,7 @@ import {
   POINTS_AWARDED_TWO,
   POINTS_LOST_ONE,
   POINTS_LOST_TWO,
+  SET_TEAMS,
   RESET
 } from "../types";
 
@@ -22,6 +23,10 @@ const PlayState = props => {
   };
 
   const [state, dispatch] = useReducer(PlayReducer, initialState);
+
+  const setTeams = (teamOne, teamTwo) => {
+    dispatch({ type: SET_TEAMS, payload: teamOne, teamTwo });
+  };
 
   const chooseQuestion = id => {
     dispatch({ type: SELECTED, payload: id });
@@ -54,6 +59,7 @@ const PlayState = props => {
         team2name: state.team2name,
         team1points: state.team1points,
         team2points: state.team2points,
+        setTeams,
         chooseQuestion,
         pointsAwardedOne,
         pointsAwardedTwo,

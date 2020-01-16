@@ -49,7 +49,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(1) ? " bg-light" : " bg-primary")
+              (selected.includes(1) ? " bg-light" : " bg-prime")
             }
             points="100"
             id="1"
@@ -60,7 +60,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(2) ? " bg-light" : " bg-primary")
+              (selected.includes(2) ? " bg-light" : " bg-prime")
             }
             points="200"
             id="2"
@@ -71,7 +71,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(3) ? " bg-light" : " bg-primary")
+              (selected.includes(3) ? " bg-light" : " bg-prime")
             }
             points="300"
             id="3"
@@ -82,7 +82,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(4) ? " bg-light" : " bg-primary")
+              (selected.includes(4) ? " bg-light" : " bg-prime")
             }
             points="400"
             id="4"
@@ -93,7 +93,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(5) ? " bg-light" : " bg-primary")
+              (selected.includes(5) ? " bg-light" : " bg-prime")
             }
             points="500"
             id="5"
@@ -109,7 +109,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(6) ? " bg-light" : " bg-primary")
+              (selected.includes(6) ? " bg-light" : " bg-prime")
             }
             points="100"
             id="6"
@@ -120,7 +120,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(7) ? " bg-light" : " bg-primary")
+              (selected.includes(7) ? " bg-light" : " bg-prime")
             }
             points="200"
             key="7"
@@ -131,7 +131,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(8) ? " bg-light" : " bg-primary")
+              (selected.includes(8) ? " bg-light" : " bg-prime")
             }
             points="300"
             id="8"
@@ -142,7 +142,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(9) ? " bg-light" : " bg-primary")
+              (selected.includes(9) ? " bg-light" : " bg-prime")
             }
             points="400"
             id="9"
@@ -153,7 +153,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(10) ? " bg-light" : " bg-primary")
+              (selected.includes(10) ? " bg-light" : " bg-prime")
             }
             points="500"
             id="10"
@@ -169,7 +169,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(11) ? " bg-light" : " bg-primary")
+              (selected.includes(11) ? " bg-light" : " bg-prime")
             }
             points="100"
             id="11"
@@ -180,7 +180,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(12) ? " bg-light" : " bg-primary")
+              (selected.includes(12) ? " bg-light" : " bg-prime")
             }
             points="200"
             id="12"
@@ -191,7 +191,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(13) ? " bg-light" : " bg-primary")
+              (selected.includes(13) ? " bg-light" : " bg-prime")
             }
             points="300"
             id="13"
@@ -202,7 +202,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(14) ? " bg-light" : " bg-primary")
+              (selected.includes(14) ? " bg-light" : " bg-prime")
             }
             points="400"
             id="14"
@@ -213,7 +213,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(15) ? " bg-light" : " bg-primary")
+              (selected.includes(15) ? " bg-light" : " bg-prime")
             }
             points="500"
             id="15"
@@ -229,7 +229,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(16) ? " bg-light" : " bg-primary")
+              (selected.includes(16) ? " bg-light" : " bg-prime")
             }
             points="100"
             id="16"
@@ -240,7 +240,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(17) ? " bg-light" : " bg-primary")
+              (selected.includes(17) ? " bg-light" : " bg-prime")
             }
             points="200"
             id="17"
@@ -251,7 +251,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(18) ? " bg-light" : " bg-primary")
+              (selected.includes(18) ? " bg-light" : " bg-prime")
             }
             points="300"
             id="18"
@@ -262,7 +262,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(19) ? " bg-light" : " bg-primary")
+              (selected.includes(19) ? " bg-light" : " bg-prime")
             }
             points="400"
             id="19"
@@ -273,7 +273,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(20) ? " bg-light" : " bg-primary")
+              (selected.includes(20) ? " bg-light" : " bg-prime")
             }
             points="500"
             id="20"
@@ -289,7 +289,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(21) ? " bg-light" : " bg-primary")
+              (selected.includes(21) ? " bg-light" : " bg-prime")
             }
             points="100"
             id="21"
@@ -300,7 +300,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(22) ? " bg-light" : " bg-primary")
+              (selected.includes(22) ? " bg-light" : " bg-prime")
             }
             points="200"
             id="22"
@@ -311,7 +311,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(23) ? " bg-light" : " bg-primary")
+              (selected.includes(23) ? " bg-light" : " bg-prime")
             }
             points="300"
             id="23"
@@ -322,7 +322,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(24) ? " bg-light" : " bg-primary")
+              (selected.includes(24) ? " bg-light" : " bg-prime")
             }
             points="400"
             id="24"
@@ -333,7 +333,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(25) ? " bg-light" : " bg-primary")
+              (selected.includes(25) ? " bg-light" : " bg-prime")
             }
             points="500"
             id="25"
@@ -349,7 +349,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(26) ? " bg-light" : " bg-primary")
+              (selected.includes(26) ? " bg-light" : " bg-prime")
             }
             points="100"
             id="26"
@@ -360,7 +360,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(27) ? " bg-light" : " bg-primary")
+              (selected.includes(27) ? " bg-light" : " bg-prime")
             }
             points="200"
             id="27"
@@ -371,7 +371,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(28) ? " bg-light" : " bg-primary")
+              (selected.includes(28) ? " bg-light" : " bg-prime")
             }
             points="300"
             id="28"
@@ -382,7 +382,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(29) ? " bg-light" : " bg-primary")
+              (selected.includes(29) ? " bg-light" : " bg-prime")
             }
             points="400"
             id="29"
@@ -393,7 +393,7 @@ function Grid({ ...props }) {
           <div
             className={
               "card-container" +
-              (selected.includes(30) ? " bg-light" : " bg-primary")
+              (selected.includes(30) ? " bg-light" : " bg-prime")
             }
             points="500"
             id="30"
