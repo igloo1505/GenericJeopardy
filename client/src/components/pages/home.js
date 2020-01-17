@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
 import QuestionContext from "../../context/questions/questionContext";
-// import Modal from "react-bootstrap/Modal";
+// import CategoryPassed from "../../context/play/eligibleCategory";
+
 import ModalTeam from "../layout/Modal";
 import PlayButton from "../play/PlayButton";
 import PlayContext from "../../context/play/playContext";

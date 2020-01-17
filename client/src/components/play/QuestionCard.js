@@ -7,7 +7,9 @@ const QuestionCard = props => {
     pointsAwardedOne,
     pointsAwardedTwo,
     pointsLostOne,
-    pointsLostTwo
+    pointsLostTwo,
+    team1name,
+    team2name
   } = playContext;
 
   const [showAnswer, setShowAnswer] = useState(false);
@@ -28,36 +30,63 @@ const QuestionCard = props => {
     }
   };
   const TeamOneMinus = () => {
-    pointsLostOne(points);
-    props.grid();
+    if (showAnswer === true) {
+      pointsLostOne(points);
+      props.grid();
+    }
   };
   const TeamTwoPlus = () => {
-    pointsAwardedTwo(points);
-    props.grid();
+    if (showAnswer === true) {
+      pointsAwardedTwo(points);
+      props.grid();
+    }
   };
   const TeamTwoMinus = () => {
-    pointsLostTwo(points);
-    props.grid();
+    if (showAnswer === true) {
+      pointsLostTwo(points);
+      props.grid();
+    }
+  };
+  let btnStyle = {
+    width: "100%"
   };
 
   return (
     <Fragment>
       <div className="Questioncard bg-light">
         <h3 className="text-prime text-left question">{question}</h3>
-        <h5 className="text-dark text-left answer">
+        <h5 style={btnStyle} className="text-dark text-left answer">
           {showAnswer ? answer : ""}
         </h5>
-        <button className="btn btn-success  TeamTwoUp" onClick={TeamTwoPlus}>
-          <h5>Team Two +</h5>
+        <button
+          className="btn btn-sm btn-success  TeamTwoUp"
+          onClick={TeamTwoPlus}
+        >
+          <h5 style={btnStyle} className="hide-sm">
+            {team2name}
+          </h5>
         </button>
-        <button className="btn btn-danger  TeamTwoDown" onClick={TeamTwoMinus}>
-          <h5>Team Two -</h5>
+        <button
+          className="btn btn-sm btn-danger  TeamTwoDown"
+          onClick={TeamTwoMinus}
+        >
+          <h5 style={btnStyle} className="hide-sm">
+            {team2name}
+          </h5>
         </button>
-        <button className="btn btn-danger  TeamOneDown" onClick={TeamOneMinus}>
-          <h5>Team One -</h5>
+        <button
+          className="btn btn-sm btn-danger  TeamOneDown"
+          onClick={TeamOneMinus}
+        >
+          <h5 style={btnStyle} className="hide-sm">
+            {team1name}
+          </h5>
         </button>
-        <button className="btn btn-success TeamOneUp" onClick={TeamOnePlus}>
-          <h5>Team One +</h5>
+        <button
+          className="btn btn-sm btn-success TeamOneUp"
+          onClick={TeamOnePlus}
+        >
+          <h5 className="hide-sm">{team1name}</h5>
         </button>
       </div>
     </Fragment>

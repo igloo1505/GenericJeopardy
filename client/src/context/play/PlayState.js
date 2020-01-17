@@ -9,7 +9,8 @@ import {
   POINTS_LOST_ONE,
   POINTS_LOST_TWO,
   SET_TEAMS,
-  RESET
+  RESET,
+  CATEGORIES
 } from "../types";
 
 const PlayState = props => {
@@ -19,6 +20,7 @@ const PlayState = props => {
     team2points: 0,
     team1name: "Team One",
     team2name: "Team Two",
+    categoriesPassed: [],
     used: false
   };
 
@@ -30,6 +32,9 @@ const PlayState = props => {
 
   const chooseQuestion = id => {
     dispatch({ type: SELECTED, payload: id });
+  };
+  const setPassed = categories => {
+    dispatch({ type: CATEGORIES, payload: categories });
   };
 
   const pointsAwardedOne = points => {
@@ -59,6 +64,8 @@ const PlayState = props => {
         team2name: state.team2name,
         team1points: state.team1points,
         team2points: state.team2points,
+        categoriesPassed: state.categoriesPassed,
+        setPassed,
         setTeams,
         chooseQuestion,
         pointsAwardedOne,

@@ -1,5 +1,6 @@
 import {
   SELECTED,
+  CATEGORIES,
   POINTS_AWARDED_ONE,
   POINTS_AWARDED_TWO,
   POINTS_LOST_ONE,
@@ -20,6 +21,11 @@ export default (state, action) => {
       return {
         ...state,
         selected: state.selected.concat(action.payload)
+      };
+    case CATEGORIES:
+      return {
+        ...state,
+        categories: action.payload
       };
     case POINTS_AWARDED_ONE:
       return {

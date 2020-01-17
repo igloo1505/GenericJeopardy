@@ -232,6 +232,9 @@ img {
   margin-bottom: 1rem;
 }
 
+
+
+
 .text-center {
   text-align: center;
 }
@@ -299,7 +302,7 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   width: 60%;
-  max-height: 75vh;
+  /* max-height: 75vh; */
   margin: auto;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
@@ -313,7 +316,7 @@ img {
 
 .Questioncard>button {
   max-width: 100px;
-  font-size: 1em;
+  font-size: 0.8em;
   /* margin: 5px; */
   margin: auto 5px 0 5px;
 }
@@ -537,11 +540,11 @@ img {
 }
 
 .btn-sm {
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   height: 50px;
   margin-bottom: 0;
   margin-top: auto;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 0.3rem;
   margin-right: 0.2rem;
 }
 

@@ -22,7 +22,8 @@ const QuestionState = props => {
     current: null,
     filtered: null,
     error: null,
-    loading: null
+    loading: null,
+    categories: []
   };
   const [state, dispatch] = useReducer(QuestionReducer, initialState);
 
@@ -125,6 +126,7 @@ const QuestionState = props => {
         filtered: state.filtered,
         error: state.error,
         loading: state.loading,
+        categories: state.categories,
         addQuestion,
         deleteQuestion,
         setCurrent,
