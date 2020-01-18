@@ -18,9 +18,8 @@ function Grid({ ...props }) {
     // eslint-disable-next-line
   }, []);
 
-  const select = (points, cat, id) => {
+  const select = async (points, cat, id) => {
     selected.push(id);
-    console.log(selected);
 
     let newArr = questions.filter(
       q => q.category === "Sample 1" && q.points === points
@@ -28,13 +27,16 @@ function Grid({ ...props }) {
     if (newArr.length > 1) {
       let randomOutput = Math.floor(Math.random() * newArr.length);
       console.log(newArr[randomOutput]);
+
       let out = newArr[randomOutput];
       props.setQuestion({ out });
       props.detail();
+      console.log(out);
       return out;
     } else {
       let out = newArr;
       props.setQuestion({ out });
+      console.log(out);
       props.detail();
     }
   };

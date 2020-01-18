@@ -14,7 +14,8 @@ const QuestionCard = props => {
 
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const { question, answer, points } = props.setQuestion.out[0];
+  const { question, answer, points } =
+    props.setQuestion.out[0] || props.setQuestion.out;
 
   window.addEventListener("keyup", function(e) {
     if (e.code === "Space") {

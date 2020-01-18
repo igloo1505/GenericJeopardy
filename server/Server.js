@@ -1,5 +1,7 @@
 const express = require("express");
+
 const connectDB = require("./config/db");
+
 const auth = require("./middleware/auth");
 
 const app = express();
@@ -9,19 +11,6 @@ connectDB();
 
 // INIT middleware to parse body
 app.use(express.json({ extended: false }));
-const agg = [
-  {
-    $group: {
-      _id: "$category",
-      points: {
-        $addToSet: "$points"
-      }
-    }
-  },
-  {
-    $out: "Category"
-  }
-];
 
 // // DEFINE ROUTES
 app.use("/users", require("./routes/Users"));
