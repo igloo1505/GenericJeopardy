@@ -24,6 +24,35 @@ const About = () => {
         randomly according to their point value and insert them, so with enough
         questions, no game will repeat itself exactly.
       </p>
+      <div className="container">
+        <h2>Notable stuff:</h2>
+        <ol className="card-about bg-light">
+          <li>
+            Since the database hosting service I use is used only for production
+            in most cases, it will "sleep" the same way a computer would if it
+            has not been used for a while. This may cause the initial load to
+            take a few extra seconds, but after that it will function like any
+            other website or database.
+          </li>
+          <li>
+            When opening a question to display it as "selected", the answer
+            won't be shown immediately. To show the answer, press the spacebar
+            and than either award or subtract points for the appropriate team.
+          </li>
+
+          <li>
+            All questions are stored in a database. The authentication is only
+            so a bunch of people not from your facility use this. The master
+            password is the same for everyone, and is only required on initially
+            signing up.
+          </li>
+          <li>
+            All users once signed up share the same database, so if one employee
+            enters or edits a certain question, category, answer, or point value
+            it will be available for everyone else to use.
+          </li>
+        </ol>
+      </div>
     </div>
   );
 };
