@@ -1,34 +1,19 @@
-const MongoClient = require("mongodb").MongoClient;
-const assert = require("assert");
+import React from "react";
+import _ from "lodash";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
- */
+let CategoryArray = [];
+let FilteredArray = [];
+const eligibleCategory = questions => {
+  var grouped = _.groupBy(questions, "category");
 
-const agg = [
-  {
-    $group: {
-      _id: "$category",
-      points: {
-        $addToSet: "$points"
-      }
-    }
-  },
-  {
-    $out: "Category"
+  let GroupedArray = Object.values(grouped);
+  console.log(GroupedArray);
+
+  for (var index = 0; index < GroupedArray.length; index++) {
+    FilteredArray.push(_.uniqBy(GroupedArray[index], "points"));
   }
-];
 
-MongoClient.connect(
-  "mongodb+srv://Iglooworks:Bigmilly1@cluster0-wafkz.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Isolated%20Edition&ssl=true",
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  function(connectErr, client) {
-    assert.equal(null, connectErr);
-    const coll = client.db("test").collection("questions");
-    coll.aggregate(agg, (cmdErr, result) => {
-      assert.equal(null, cmdErr);
-    });
-    client.close();
-  }
-);
+  return console.log(FilteredArray);
+};
+
+export default eligibleCategory;

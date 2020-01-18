@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, Fragment, useState } from "react";
+import QuestionContext from "../../context/questions/questionContext";
+
 import AuthContext from "../../context/auth/authContext";
-// import CategoryPassed from "../../context/play/eligibleCategory";
 import QuestionCard from "../play/QuestionCard";
 import Grid from "../play/Grid";
+import eligibleCategory from "../../context/play/eligibleCategory";
 
-const Play = ({ questions, ...props }) => {
+const Play = ({ ...props }) => {
+  const questionContext = useContext(QuestionContext);
+  const { questions } = questionContext;
   let [questionDetail, setQuestionDetails] = useState(false);
   let [qSelected, setQSelected] = useState(null);
 
@@ -14,7 +18,7 @@ const Play = ({ questions, ...props }) => {
     // eslint-disable-next-line
   }, []);
 
-  // CategoryPassed(questions);
+  eligibleCategory(questions);
 
   return (
     <Fragment>
