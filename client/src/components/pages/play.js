@@ -4,7 +4,7 @@ import QuestionContext from "../../context/questions/questionContext";
 import AuthContext from "../../context/auth/authContext";
 import QuestionCard from "../play/QuestionCard";
 import Grid from "../play/Grid";
-import eligibleCategory from "../../context/play/eligibleCategory";
+// import eligibleCategory from "../../context/play/eligibleCategory";
 
 const Play = ({ ...props }) => {
   const questionContext = useContext(QuestionContext);
@@ -18,7 +18,7 @@ const Play = ({ ...props }) => {
     // eslint-disable-next-line
   }, []);
 
-  eligibleCategory(questions);
+  // eligibleCategory(questions);
 
   return (
     <Fragment>
@@ -32,9 +32,7 @@ const Play = ({ ...props }) => {
       ) : (
         <Grid
           detail={() => setQuestionDetails(true)}
-          // selected={selected}
           setQuestion={setQSelected}
-          // setSelected={setSelected}
           question={questions}
         />
       )}

@@ -6,10 +6,11 @@ import QuestionContext from "../../context/questions/questionContext";
 import ModalTeam from "../layout/Modal";
 import PlayButton from "../play/PlayButton";
 import PlayContext from "../../context/play/playContext";
+import eligibleCategory from "../../context/play/eligibleCategory";
 
 const Home = ({ ...props }) => {
   const playContext = useContext(PlayContext);
-  const { resetGame } = playContext;
+  const { resetGame, setPassed, categoriesPassed } = playContext;
   const authContext = useContext(AuthContext);
   const questionContext = useContext(QuestionContext);
   const { getQuestions, questions } = questionContext;
@@ -22,6 +23,8 @@ const Home = ({ ...props }) => {
     getQuestions();
     // eslint-disable-next-line
   }, []);
+
+  eligibleCategory(questions, setPassed, categoriesPassed);
 
   return (
     <div>

@@ -25,7 +25,7 @@ export default (state, action) => {
     case CATEGORIES:
       return {
         ...state,
-        categories: action.payload
+        categoriesPassed: state.categoriesPassed.concat(action.payload)
       };
     case POINTS_AWARDED_ONE:
       return {
@@ -51,6 +51,7 @@ export default (state, action) => {
       return {
         ...state,
         selected: [],
+        categoriesPassed: [],
         team1points: 0,
         team2points: 0,
         team1name: "",

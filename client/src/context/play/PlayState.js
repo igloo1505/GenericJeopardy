@@ -33,8 +33,9 @@ const PlayState = props => {
   const chooseQuestion = id => {
     dispatch({ type: SELECTED, payload: id });
   };
-  const setPassed = categories => {
-    dispatch({ type: CATEGORIES, payload: categories });
+
+  const setPassed = catPassed => {
+    dispatch({ type: CATEGORIES, payload: catPassed });
   };
 
   const pointsAwardedOne = points => {

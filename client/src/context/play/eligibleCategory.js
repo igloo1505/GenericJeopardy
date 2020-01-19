@@ -1,25 +1,30 @@
-import React from "react";
+import { useContext } from "react";
 import _ from "lodash";
 
 let CategoryArray = [];
 let FilteredArray = [];
-const eligibleCategory = questions => {
+const eligibleCategory = (questions, setPassed, categoriesPassed) => {
   var grouped = _.groupBy(questions, "category");
 
   let GroupedArray = Object.values(grouped);
-  // console.log(GroupedArray);
 
   for (var index = 0; index < GroupedArray.length; index++) {
     FilteredArray.push(_.uniqBy(GroupedArray[index], "points"));
   }
   for (var x = 0; x < FilteredArray.length; x++) {
-    if (FilteredArray[x].length >= 5) {
-      CategoryArray.push(FilteredArray[x][0].category);
-      // console.log(FilteredArray[x][0].category);
+    debugger;
+    if (
+      FilteredArray[x].length >= 5 &&
+      categoriesPassed.includes(FilteredArray[x][0].category) === false
+    ) {
+      setPassed(FilteredArray[x][0].category);
+      // categoriesPassed.push(FilteredArray[x].category);
+    } else {
+      console.log("wtf");
     }
   }
 
-  return console.log(CategoryArray);
+  return console.log(categoriesPassed);
 };
 
 export default eligibleCategory;

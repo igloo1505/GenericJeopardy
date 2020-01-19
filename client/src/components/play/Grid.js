@@ -26,15 +26,13 @@ function Grid({ ...props }) {
     );
     if (newArr.length > 1) {
       let randomOutput = Math.floor(Math.random() * newArr.length);
-      console.log(newArr[randomOutput]);
-
       let out = newArr[randomOutput];
       props.setQuestion({ out });
       props.detail();
       console.log(out);
       return out;
     } else {
-      let out = newArr;
+      let out = newArr[0];
       props.setQuestion({ out });
       console.log(out);
       props.detail();
