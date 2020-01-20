@@ -1,11 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
+import PlayContext from "../../context/play/playContext";
+import eligibleCategory from "../../context/play/eligibleCategory";
 import uuid from "uuid";
 
 const QuestionForm = ({ DynamicArray }) => {
   const questionContext = useContext(QuestionContext);
+  const playContext = useContext(PlayContext);
 
-  const { current, clearCurrent, updateQuestion } = questionContext;
+  const { categoriesPassed, setPassed } = playContext;
+  const { current, clearCurrent, updateQuestion, questions } = questionContext;
+  eligibleCategory(questions, setPassed, categoriesPassed);
 
   useEffect(() => {
     if (current !== null) {
@@ -117,11 +122,14 @@ const QuestionForm = ({ DynamicArray }) => {
           </button>
         </div>
       )}
-      <div className="card">
-        {DynamicArray.map(cat => (
-          <div key={uuid()}>{cat} </div>
+      <h4>
+        These categories have the needed questions (You need at least six):
+      </h4>
+      <ol className="catList">
+        {categoriesPassed.map(cat => (
+          <li key={uuid()}>{cat} </li>
         ))}
-      </div>
+      </ol>
     </form>
   );
 };

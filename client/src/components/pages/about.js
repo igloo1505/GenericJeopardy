@@ -42,7 +42,7 @@ const About = () => {
 
           <li>
             All questions are stored in a database. The authentication is only
-            so a bunch of people not from your facility use this. The master
+            so a bunch of people not from `your` facility use this. The master
             password is the same for everyone, and is only required on initially
             signing up.
           </li>
@@ -51,7 +51,17 @@ const About = () => {
             enters or edits a certain question, category, answer, or point value
             it will be available for everyone else to use.
           </li>
+          <li>
+            You don't have to use your actual email. The validation only checks
+            if it is formated like an email, and that it hasn't already been
+            used. There is no verification email that gets sent.
+          </li>
         </ol>
+        <footer className="footer">
+          <span>
+            IglooDevelopment <span className="logo">&#x2603;</span>
+          </span>
+        </footer>
       </div>
     </div>
   );

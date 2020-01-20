@@ -6,6 +6,7 @@ import {
   POINTS_LOST_ONE,
   POINTS_LOST_TWO,
   SET_TEAMS,
+  ENOUGH,
   RESET
 } from "../types";
 
@@ -26,6 +27,11 @@ export default (state, action) => {
       return {
         ...state,
         categoriesPassed: state.categoriesPassed.concat(action.payload)
+      };
+    case ENOUGH:
+      return {
+        ...state,
+        enoughCategories: action.payload
       };
     case POINTS_AWARDED_ONE:
       return {

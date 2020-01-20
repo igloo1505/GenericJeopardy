@@ -1,19 +1,29 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, Fragment, useState } from "react";
 import AuthContext from "../../context/auth/authContext";
 import QuestionContext from "../../context/questions/questionContext";
-// import CategoryPassed from "../../context/play/eligibleCategory";
-
+import { Link } from "react-router-dom";
 import ModalTeam from "../layout/Modal";
 import PlayButton from "../play/PlayButton";
 import PlayContext from "../../context/play/playContext";
 import eligibleCategory from "../../context/play/eligibleCategory";
 
-const Home = ({ ...props }) => {
+const Home = ({ setPlay }) => {
   const playContext = useContext(PlayContext);
-  const { resetGame, setPassed, categoriesPassed } = playContext;
+  const {
+    resetGame,
+    setPassed,
+    categoriesPassed
+    // enough,
+    // setEnough
+  } = playContext;
+
   const authContext = useContext(AuthContext);
   const questionContext = useContext(QuestionContext);
   const { getQuestions, questions } = questionContext;
+  const [enough, setEnough] = useState(false);
+  const past = () => {
+    setEnough(true);
+  };
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
@@ -23,16 +33,50 @@ const Home = ({ ...props }) => {
     getQuestions();
     // eslint-disable-next-line
   }, []);
+  let hStyle = {
+    width: "80%",
+    textAlign: "center",
+    margin: "auto",
+    paddingTop: "15%"
+  };
+  let lStyle = {
+    textAlign: "center",
+    margin: "auto",
+    width: "50%",
+    borderRadius: "8px",
+    backgroundColor: "#f4f4f4",
+    marginTop: "20px",
+    padding: "20px",
+    border: "1px solid grey",
+    display: "block"
+  };
 
-  eligibleCategory(questions, setPassed, categoriesPassed);
+  console.log(categoriesPassed.length);
+
+  if (enough === false) {
+    eligibleCategory(questions, setPassed, categoriesPassed, past);
+  }
 
   return (
     <div>
-      <ModalTeam />
+      {enough ? <ModalTeam /> : " "}
+
       <button className="reset-btn btn btn-danger" onClick={() => resetGame()}>
         Reset
       </button>
-      <PlayButton onClick={() => props.setPlay(true)} questions={questions} />
+      {enough ? (
+        <PlayButton onClick={() => setPlay(true)} questions={questions} />
+      ) : (
+        <Fragment>
+          <h1 style={hStyle}>
+            Oh no. Please add more questions. You need 6 categories completed
+            and now you only have {categoriesPassed.length}
+          </h1>
+          <Link to="/admin">
+            <h1 style={lStyle}>Click here to add more.</h1>
+          </Link>
+        </Fragment>
+      )}
     </div>
   );
 };

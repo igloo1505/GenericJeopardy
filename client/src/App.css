@@ -23,6 +23,28 @@ body {
   color: #333;
 }
 
+footer {
+  /* width: 100vw; */
+  width: 100%;
+  margin: 50px 0px 0px 0px;
+  left: 0;
+  position: absolute;
+  display: block;
+  background: var(--light-color)
+}
+
+.footer>span {
+  display: block;
+  color: black;
+  padding: 10px 0px 10px 30px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: black;
+  padding-left: 5px;
+}
+
 a {
   color: var(--prime-color);
   text-decoration: none;
@@ -152,16 +174,16 @@ img {
   border-top: 1px solid #e5e5e5;
 }
 
-.modal-footer .btn + .btn {
+.modal-footer .btn+.btn {
   margin-bottom: 0;
   margin-left: 5px;
 }
 
-.modal-footer .btn-group .btn + .btn {
+.modal-footer .btn-group .btn+.btn {
   margin-left: -1px;
 }
 
-.modal-footer .btn-block + .btn-block {
+.modal-footer .btn-block+.btn-block {
   margin-left: 0;
 }
 
@@ -294,6 +316,7 @@ img {
     "answer answer answer ."
     "edit delete . .";
 }
+
 ol {
   list-style: none;
   counter-reset: counter;
@@ -303,17 +326,25 @@ ol {
   border: #ccc 1px dotted;
   margin: 1.3rem 0;
 }
-ol > li {
+
+ol>li {
   counter-increment: counter;
   display: flex;
   padding: 10px;
   width: 50%;
 }
-ol > li::before {
-  content: "0" counter(counter);
+
+ol>li::before {
+  content: "0"counter(counter);
   font-size: 2rem;
   font-weight: bold;
   margin-right: 0.5rem;
+}
+
+.catList {
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem 0;
 }
 
 .Questioncard {
@@ -331,19 +362,18 @@ ol > li::before {
     "TeamTwoUp TeamTwoDown . TeamOneUp TeamOneDown";
 }
 
-.Questioncard > button {
+.Questioncard>button {
   max-width: 100px;
   font-size: 0.8em;
-  /* margin: 5px; */
   margin: auto 5px 0 5px;
 }
 
-.Questioncard > .question {
+.Questioncard>.question {
   font-size: 2em;
   line-height: 1.3em;
 }
 
-.Questioncard > .answer {
+.Questioncard>.answer {
   vertical-align: middle;
   font-size: 1.3em;
 }
@@ -590,7 +620,7 @@ ol > li::before {
   margin-left: auto;
   margin-right: auto;
   position: absolute;
-  top: 65%;
+  top: calc(50% + 200px);
   left: 50%;
   transform: translate(-50%, -50%);
 }

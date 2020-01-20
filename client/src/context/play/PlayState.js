@@ -10,6 +10,7 @@ import {
   POINTS_LOST_TWO,
   SET_TEAMS,
   RESET,
+  ENOUGH,
   CATEGORIES
 } from "../types";
 
@@ -21,7 +22,8 @@ const PlayState = props => {
     team1name: "Team One",
     team2name: "Team Two",
     categoriesPassed: [],
-    used: false
+    used: false,
+    enoughCategories: false
   };
 
   const [state, dispatch] = useReducer(PlayReducer, initialState);
@@ -36,6 +38,10 @@ const PlayState = props => {
 
   const setPassed = catPassed => {
     dispatch({ type: CATEGORIES, payload: catPassed });
+  };
+
+  const setEnough = bool => {
+    dispatch({ type: ENOUGH, payload: bool });
   };
 
   const pointsAwardedOne = points => {
@@ -66,8 +72,10 @@ const PlayState = props => {
         team1points: state.team1points,
         team2points: state.team2points,
         categoriesPassed: state.categoriesPassed,
+        enoughCategories: state.enoughCategories,
         setPassed,
         setTeams,
+        setEnough,
         chooseQuestion,
         pointsAwardedOne,
         pointsAwardedTwo,

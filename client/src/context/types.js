@@ -26,3 +26,4 @@ export const POINTS_LOST_TWO = "POINTS_LOST_TWO";
 export const SELECTED = "SELECTED";
 export const SET_TEAMS = "SET_TEAMS";
 export const RESET = "RESET";
+export const ENOUGH = "ENOUGH";

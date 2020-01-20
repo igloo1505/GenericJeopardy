@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, Fragment, useState } from "react";
 import QuestionContext from "../../context/questions/questionContext";
-
 import AuthContext from "../../context/auth/authContext";
 import QuestionCard from "../play/QuestionCard";
 import Grid from "../play/Grid";
-// import eligibleCategory from "../../context/play/eligibleCategory";
 
 const Play = ({ ...props }) => {
   const questionContext = useContext(QuestionContext);
@@ -17,8 +15,6 @@ const Play = ({ ...props }) => {
     authContext.loadUser();
     // eslint-disable-next-line
   }, []);
-
-  // eligibleCategory(questions);
 
   return (
     <Fragment>
