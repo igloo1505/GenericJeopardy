@@ -9,10 +9,12 @@ const About = () => {
       <p className="bg-dark p">Version 1.0.0</p>
       <br />
       <p style={aboutStyle}>
-        Add questions to the database using the admin page. Include a point
-        value and category, and the application will automatically sort them by
-        category and randomize the output if more than 5 questions exist in that
-        category.
+        Add questions to the database using the admin page. These questions in
+        Sample categories are just there to show how things will work when it's
+        completed, delete them if you prefer and add as many as you want.
+        Include a point value and category, and the application will
+        automatically sort them by category and randomize the output if more
+        than 5 questions exist in that category.
       </p>
       <br />
 
@@ -24,7 +26,7 @@ const About = () => {
         randomly according to their point value and insert them, so with enough
         questions, no game will repeat itself exactly.
       </p>
-      <div className="container">
+      <div className="container-about">
         <h2>Notable stuff:</h2>
         <ol className="card-about bg-light">
           <li>
@@ -57,12 +59,12 @@ const About = () => {
             used. There is no verification email that gets sent.
           </li>
         </ol>
-        <footer className="footer">
-          <span>
-            IglooDevelopment <span className="logo">&#x2603;</span>
-          </span>
-        </footer>
       </div>
+      <footer className="footer">
+        <span>
+          IglooDevelopment <span className="logo">&#x2603;</span>
+        </span>
+      </footer>
     </div>
   );
 };

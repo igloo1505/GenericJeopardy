@@ -1,8 +1,7 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/home";
-import QuestionContext from "./context/questions/questionContext";
 import Admin from "./components/pages/admin";
 import About from "./components/pages/about";
 import Register from "./components/auth/Register";
@@ -23,7 +22,6 @@ if (localStorage.token) {
 
 const App = () => {
   const [play, setPlay] = useState(false);
-  const [enough, setEnough] = useState(false);
 
   return (
     <AuthState>
@@ -41,8 +39,6 @@ const App = () => {
                       path="/"
                       component={Home}
                       play={setPlay}
-                      enough={enough}
-                      setEnough={setEnough}
                     />
                     <Route exact path="/about" component={About} />
                     <PrivateRoute exact path="/admin" component={Admin} />

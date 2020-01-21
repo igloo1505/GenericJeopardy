@@ -20,7 +20,7 @@ const QuestionForm = ({ DynamicArray }) => {
         question: "",
         answer: "",
         category: "",
-        points: Number
+        points: ""
       });
     }
   }, [questionContext, current]);
@@ -29,7 +29,7 @@ const QuestionForm = ({ DynamicArray }) => {
     question: "",
     answer: "",
     category: "",
-    points: Number
+    points: ""
   });
   const { answer, category } = question;
 
@@ -48,7 +48,7 @@ const QuestionForm = ({ DynamicArray }) => {
       question: "",
       answer: "",
       category: "",
-      points: Number
+      points: ""
     });
     clearCurrent();
   };

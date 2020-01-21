@@ -15,7 +15,6 @@ const eligibleCategory = (questions, setPassed, categoriesPassed, past) => {
       categoriesPassed.includes(FilteredArray[x][0].category) === false
     ) {
       setPassed(FilteredArray[x][0].category);
-      // categoriesPassed.push(FilteredArray[x].category);
     }
   }
   if (categoriesPassed.length >= 6) {

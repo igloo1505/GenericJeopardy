@@ -9,13 +9,7 @@ import eligibleCategory from "../../context/play/eligibleCategory";
 
 const Home = ({ setPlay }) => {
   const playContext = useContext(PlayContext);
-  const {
-    resetGame,
-    setPassed,
-    categoriesPassed
-    // enough,
-    // setEnough
-  } = playContext;
+  const { resetGame, setPassed, categoriesPassed } = playContext;
 
   const authContext = useContext(AuthContext);
   const questionContext = useContext(QuestionContext);
