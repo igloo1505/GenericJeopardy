@@ -52,14 +52,14 @@ const Home = ({ setPlay }) => {
     const past = () => {
       setEnough(true);
     };
-    eligibleCategory(
+    eligibleCategory({
       questions,
       setPassed,
       categoriesPassed,
       past,
       setRanList,
       setRandomOutput
-    );
+    });
   }
 
   return (

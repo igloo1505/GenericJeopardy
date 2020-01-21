@@ -13,9 +13,15 @@ const QuestionForm = ({ DynamicArray }) => {
   const setRanList = () => {
     console.log("I'll fix this later");
   };
-  const { categoriesPassed, setPassed } = playContext;
+  const { categoriesPassed, setPassed, setRandomOutput } = playContext;
   const { current, clearCurrent, updateQuestion, questions } = questionContext;
-  eligibleCategory(questions, setPassed, categoriesPassed, past, setRanList);
+  eligibleCategory({
+    questions,
+    setPassed,
+    categoriesPassed,
+    past,
+    setRandomOutput
+  });
 
   useEffect(() => {
     if (current !== null) {

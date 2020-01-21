@@ -1,14 +1,14 @@
 import _ from "lodash";
 
 let FilteredArray = [];
-const eligibleCategory = (
+const eligibleCategory = ({
   questions,
   setPassed,
   categoriesPassed,
   past,
   setRanList,
   setRandomOutput
-) => {
+}) => {
   var grouped = _.groupBy(questions, "category");
 
   let GroupedArray = Object.values(grouped);
@@ -35,11 +35,9 @@ const eligibleCategory = (
         randomList.push(categoriesPassed[ran]);
       }
     }
-    setRanList(randomList);
     setRandomOutput(randomList);
   }
-
-  return randomList;
+  return console.log(randomList);
 };
 
 export default eligibleCategory;
