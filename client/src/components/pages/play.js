@@ -23,7 +23,6 @@ const Play = ({ ...props }) => {
           grid={() => setQuestionDetails(false)}
           setQuestion={qSelected}
           questions={questions}
-          {...props}
         />
       ) : (
         <Grid

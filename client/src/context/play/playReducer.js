@@ -60,8 +60,8 @@ export default (state, action) => {
         categoriesPassed: [],
         team1points: 0,
         team2points: 0,
-        team1name: "",
-        team2name: "",
+        team1name: "Team 1",
+        team2name: "Team 2",
         used: false
       };
     default:
