@@ -7,10 +7,12 @@ import uuid from "uuid";
 const QuestionForm = ({ DynamicArray }) => {
   const questionContext = useContext(QuestionContext);
   const playContext = useContext(PlayContext);
-
+  const past = () => {
+    console.log("Change Style Function here");
+  };
   const { categoriesPassed, setPassed } = playContext;
   const { current, clearCurrent, updateQuestion, questions } = questionContext;
-  eligibleCategory(questions, setPassed, categoriesPassed);
+  eligibleCategory(questions, setPassed, categoriesPassed, past);
 
   useEffect(() => {
     if (current !== null) {

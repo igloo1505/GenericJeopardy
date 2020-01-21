@@ -15,9 +15,9 @@ const Home = ({ setPlay }) => {
   const questionContext = useContext(QuestionContext);
   const { getQuestions, questions } = questionContext;
   const [enough, setEnough] = useState(false);
-  const past = () => {
-    setEnough(true);
-  };
+  // const past = () => {
+  //   setEnough(true);
+  // };
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
@@ -45,9 +45,10 @@ const Home = ({ setPlay }) => {
     display: "block"
   };
 
-  console.log(categoriesPassed.length);
-
   if (enough === false) {
+    const past = () => {
+      setEnough(true);
+    };
     eligibleCategory(questions, setPassed, categoriesPassed, past);
   }
 
