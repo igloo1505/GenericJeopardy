@@ -9,15 +9,18 @@ import eligibleCategory from "../../context/play/eligibleCategory";
 
 const Home = ({ setPlay }) => {
   const playContext = useContext(PlayContext);
-  const { resetGame, setPassed, categoriesPassed } = playContext;
+  const {
+    resetGame,
+    setPassed,
+    categoriesPassed,
+    setRandomOutput
+  } = playContext;
 
   const authContext = useContext(AuthContext);
   const questionContext = useContext(QuestionContext);
   const { getQuestions, questions } = questionContext;
   const [enough, setEnough] = useState(false);
-  // const past = () => {
-  //   setEnough(true);
-  // };
+  const [ranList, setRanList] = useState([]);
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
@@ -49,7 +52,14 @@ const Home = ({ setPlay }) => {
     const past = () => {
       setEnough(true);
     };
-    eligibleCategory(questions, setPassed, categoriesPassed, past);
+    eligibleCategory(
+      questions,
+      setPassed,
+      categoriesPassed,
+      past,
+      setRanList,
+      setRandomOutput
+    );
   }
 
   return (
@@ -60,7 +70,11 @@ const Home = ({ setPlay }) => {
         Reset
       </button>
       {enough ? (
-        <PlayButton onClick={() => setPlay(true)} questions={questions} />
+        <PlayButton
+          onClick={() => setPlay(true)}
+          questions={questions}
+          randomList={ranList}
+        />
       ) : (
         <Fragment>
           <h1 style={hStyle}>

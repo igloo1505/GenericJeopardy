@@ -1,7 +1,14 @@
 import _ from "lodash";
 
 let FilteredArray = [];
-const eligibleCategory = (questions, setPassed, categoriesPassed, past) => {
+const eligibleCategory = (
+  questions,
+  setPassed,
+  categoriesPassed,
+  past,
+  setRanList,
+  setRandomOutput
+) => {
   var grouped = _.groupBy(questions, "category");
 
   let GroupedArray = Object.values(grouped);
@@ -17,11 +24,22 @@ const eligibleCategory = (questions, setPassed, categoriesPassed, past) => {
       setPassed(FilteredArray[x][0].category);
     }
   }
+
+  let randomList = [];
+
   if (categoriesPassed.length >= 6) {
     past();
+    while (randomList.length < 6) {
+      let ran = Math.floor(Math.random() * categoriesPassed.length);
+      if (randomList.indexOf(categoriesPassed[ran]) === -1) {
+        randomList.push(categoriesPassed[ran]);
+      }
+    }
+    setRanList(randomList);
+    setRandomOutput(randomList);
   }
 
-  return categoriesPassed;
+  return randomList;
 };
 
 export default eligibleCategory;

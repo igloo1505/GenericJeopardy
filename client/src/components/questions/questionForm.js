@@ -10,9 +10,12 @@ const QuestionForm = ({ DynamicArray }) => {
   const past = () => {
     console.log("Change Style Function here");
   };
+  const setRanList = () => {
+    console.log("I'll fix this later");
+  };
   const { categoriesPassed, setPassed } = playContext;
   const { current, clearCurrent, updateQuestion, questions } = questionContext;
-  eligibleCategory(questions, setPassed, categoriesPassed, past);
+  eligibleCategory(questions, setPassed, categoriesPassed, past, setRanList);
 
   useEffect(() => {
     if (current !== null) {

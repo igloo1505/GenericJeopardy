@@ -11,7 +11,8 @@ import {
   SET_TEAMS,
   RESET,
   ENOUGH,
-  CATEGORIES
+  CATEGORIES,
+  SETRANDOM
 } from "../types";
 
 const PlayState = props => {
@@ -23,7 +24,8 @@ const PlayState = props => {
     team2name: "Team Two",
     categoriesPassed: [],
     used: false,
-    enoughCategories: false
+    enoughCategories: false,
+    randomOutput: []
   };
 
   const [state, dispatch] = useReducer(PlayReducer, initialState);
@@ -59,6 +61,10 @@ const PlayState = props => {
     dispatch({ type: POINTS_LOST_TWO, payload: points });
   };
 
+  const setRandomOutput = new_arr => {
+    dispatch({ type: SETRANDOM, payload: new_arr });
+  };
+
   const resetGame = () => {
     dispatch({ type: RESET });
   };
@@ -73,6 +79,7 @@ const PlayState = props => {
         team2points: state.team2points,
         categoriesPassed: state.categoriesPassed,
         enoughCategories: state.enoughCategories,
+        randomOutput: state.randomOutput,
         setPassed,
         setTeams,
         setEnough,
@@ -81,7 +88,8 @@ const PlayState = props => {
         pointsAwardedTwo,
         pointsLostOne,
         pointsLostTwo,
-        resetGame
+        resetGame,
+        setRandomOutput
       }}
     >
       {props.children}

@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, Fragment, useState } from "react";
 import QuestionContext from "../../context/questions/questionContext";
+
 import AuthContext from "../../context/auth/authContext";
 import QuestionCard from "../play/QuestionCard";
 import Grid from "../play/Grid";
 
-const Play = ({ ...props }) => {
+const Play = ({ ranlist, ...props }) => {
   const questionContext = useContext(QuestionContext);
   const { questions } = questionContext;
   let [questionDetail, setQuestionDetails] = useState(false);

@@ -31,7 +31,7 @@ footer {
   background: var(--light-color);
 }
 
-.footer > span {
+.footer>span {
   display: block;
   color: black;
   padding: 10px 0px 10px 30px;
@@ -68,10 +68,13 @@ img {
   margin: auto;
   padding-top: 2rem;
 }
+
 .container-about {
   max-width: 1100px;
   width: 90%;
   height: 80%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20%;
   padding-top: 2rem;
 }
@@ -179,16 +182,16 @@ img {
   border-top: 1px solid #e5e5e5;
 }
 
-.modal-footer .btn + .btn {
+.modal-footer .btn+.btn {
   margin-bottom: 0;
   margin-left: 5px;
 }
 
-.modal-footer .btn-group .btn + .btn {
+.modal-footer .btn-group .btn+.btn {
   margin-left: -1px;
 }
 
-.modal-footer .btn-block + .btn-block {
+.modal-footer .btn-block+.btn-block {
   margin-left: 0;
 }
 
@@ -332,15 +335,15 @@ ol {
   margin: 1.3rem 0;
 }
 
-ol > li {
+ol>li {
   counter-increment: counter;
   display: flex;
   padding: 10px;
   width: 50%;
 }
 
-ol > li::before {
-  content: "0" counter(counter);
+ol>li::before {
+  content: "0"counter(counter);
   font-size: 2rem;
   font-weight: bold;
   margin-right: 0.5rem;
@@ -367,18 +370,18 @@ ol > li::before {
     "TeamTwoUp TeamTwoDown . TeamOneUp TeamOneDown";
 }
 
-.Questioncard > button {
+.Questioncard>button {
   max-width: 100px;
   font-size: 0.8em;
   margin: auto 5px 0 5px;
 }
 
-.Questioncard > .question {
+.Questioncard>.question {
   font-size: 2em;
   line-height: 1.3em;
 }
 
-.Questioncard > .answer {
+.Questioncard>.answer {
   vertical-align: middle;
   font-size: 1.3em;
 }

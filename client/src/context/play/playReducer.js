@@ -7,7 +7,8 @@ import {
   POINTS_LOST_TWO,
   SET_TEAMS,
   ENOUGH,
-  RESET
+  RESET,
+  SETRANDOM
 } from "../types";
 
 export default (state, action) => {
@@ -17,6 +18,11 @@ export default (state, action) => {
         ...state,
         team1name: action.payload.teamOne,
         team2name: action.payload.teamTwo
+      };
+    case SETRANDOM:
+      return {
+        ...state,
+        randomOutput: action.payload
       };
     case SELECTED:
       return {

@@ -5,7 +5,7 @@ import QuestionContext from "../../context/questions/questionContext";
 
 function Grid({ ...props }) {
   const playContext = useContext(PlayContext);
-  const { selected } = playContext;
+  const { selected, randomOutput } = playContext;
   const questionContext = useContext(QuestionContext);
   const { questions, getQuestions } = questionContext;
   const authContext = useContext(AuthContext);
@@ -22,7 +22,7 @@ function Grid({ ...props }) {
     selected.push(id);
 
     let newArr = questions.filter(
-      q => q.category === "Sample 1" && q.points === points
+      q => q.category === cat && q.points === points
     );
     if (newArr.length > 1) {
       let randomOutput = Math.floor(Math.random() * newArr.length);
@@ -42,7 +42,7 @@ function Grid({ ...props }) {
       <div className="mainGrid">
         <div className="col1" id="Sample 1">
           <div className="category1">
-            <h2>Category 1</h2>
+            <h2>{randomOutput[0]}</h2>
           </div>
           <div
             className={
@@ -51,7 +51,7 @@ function Grid({ ...props }) {
             }
             points="100"
             id="1"
-            onClick={e => select(100, "cat1", 1)}
+            onClick={e => select(100, randomOutput[0], 1)}
           >
             <h3 className="text-light">100</h3>
           </div>
@@ -62,7 +62,7 @@ function Grid({ ...props }) {
             }
             points="200"
             id="2"
-            onClick={() => select(100, "cat1", 2)}
+            onClick={() => select(100, randomOutput[0], 2)}
           >
             <h3 className="text-light">200</h3>
           </div>
@@ -73,7 +73,7 @@ function Grid({ ...props }) {
             }
             points="300"
             id="3"
-            onClick={e => select(300, "cat1", 3)}
+            onClick={e => select(300, randomOutput[0], 3)}
           >
             <h3 className="text-light">300</h3>
           </div>
@@ -84,7 +84,7 @@ function Grid({ ...props }) {
             }
             points="400"
             id="4"
-            onClick={e => select(400, "cat1", 4)}
+            onClick={e => select(400, randomOutput[0], 4)}
           >
             <h3 className="text-light">400</h3>
           </div>
@@ -95,14 +95,14 @@ function Grid({ ...props }) {
             }
             points="500"
             id="5"
-            onClick={e => select(500, "cat1", 5)}
+            onClick={e => select(500, randomOutput[0], 5)}
           >
             <h3 className="text-light">500</h3>
           </div>
         </div>
         <div className="col2">
           <div className="category2">
-            <h2>Category 2</h2>
+            <h2>{randomOutput[1]}</h2>
           </div>
           <div
             className={
@@ -111,7 +111,7 @@ function Grid({ ...props }) {
             }
             points="100"
             id="6"
-            onClick={e => select(100, "cat2", 6)}
+            onClick={e => select(100, randomOutput[1], 6)}
           >
             <h3 className="text-light">100</h3>
           </div>
@@ -122,7 +122,7 @@ function Grid({ ...props }) {
             }
             points="200"
             key="7"
-            onClick={e => select(200, "cat2", 7)}
+            onClick={e => select(200, randomOutput[1], 7)}
           >
             <h3 className="text-light">200</h3>
           </div>
@@ -133,7 +133,7 @@ function Grid({ ...props }) {
             }
             points="300"
             id="8"
-            onClick={e => select(300, "cat2", 8)}
+            onClick={e => select(300, randomOutput[1], 8)}
           >
             <h3 className="text-light">300</h3>
           </div>
@@ -144,7 +144,7 @@ function Grid({ ...props }) {
             }
             points="400"
             id="9"
-            onClick={e => select(400, "cat2", 9)}
+            onClick={e => select(400, randomOutput[1], 9)}
           >
             <h3 className="text-light">400</h3>
           </div>
@@ -155,14 +155,14 @@ function Grid({ ...props }) {
             }
             points="500"
             id="10"
-            onClick={e => select(500, "cat2", 10)}
+            onClick={e => select(500, randomOutput[1], 10)}
           >
             <h3 className="text-light">500</h3>
           </div>
         </div>
         <div className="col3">
           <div className="category3">
-            <h2>Category 3</h2>
+            <h2>{randomOutput[2]}</h2>
           </div>
           <div
             className={
@@ -171,7 +171,7 @@ function Grid({ ...props }) {
             }
             points="100"
             id="11"
-            onClick={e => select(100, "cat3", 11)}
+            onClick={e => select(100, randomOutput[2], 11)}
           >
             <h3 className="text-light">100</h3>
           </div>
@@ -182,7 +182,7 @@ function Grid({ ...props }) {
             }
             points="200"
             id="12"
-            onClick={e => select(200, "cat3", 12)}
+            onClick={e => select(200, randomOutput[2], 12)}
           >
             <h3 className="text-light">200</h3>
           </div>
@@ -193,7 +193,7 @@ function Grid({ ...props }) {
             }
             points="300"
             id="13"
-            onClick={e => select(300, "cat3", 13)}
+            onClick={e => select(300, randomOutput[2], 13)}
           >
             <h3 className="text-light">300</h3>
           </div>
@@ -204,7 +204,7 @@ function Grid({ ...props }) {
             }
             points="400"
             id="14"
-            onClick={e => select(400, "cat3", 14)}
+            onClick={e => select(400, randomOutput[2], 14)}
           >
             <h3 className="text-light">400</h3>
           </div>
@@ -215,14 +215,14 @@ function Grid({ ...props }) {
             }
             points="500"
             id="15"
-            onClick={e => select(500, "cat3", 15)}
+            onClick={e => select(500, randomOutput[2], 15)}
           >
             <h3 className="text-light">500</h3>
           </div>
         </div>
         <div className="col4">
           <div className="category4">
-            <h2>Category 4</h2>
+            <h2>{randomOutput[3]}</h2>
           </div>
           <div
             className={
@@ -231,7 +231,7 @@ function Grid({ ...props }) {
             }
             points="100"
             id="16"
-            onClick={e => select(100, "cat4", 16)}
+            onClick={e => select(100, randomOutput[3], 16)}
           >
             <h3 className="text-light">100</h3>
           </div>
@@ -242,7 +242,7 @@ function Grid({ ...props }) {
             }
             points="200"
             id="17"
-            onClick={e => select(200, "cat4", 17)}
+            onClick={e => select(200, randomOutput[3], 17)}
           >
             <h3 className="text-light">200</h3>
           </div>
@@ -253,7 +253,7 @@ function Grid({ ...props }) {
             }
             points="300"
             id="18"
-            onClick={e => select(300, "cat4", 18)}
+            onClick={e => select(300, randomOutput[3], 18)}
           >
             <h3 className="text-light">300</h3>
           </div>
@@ -264,7 +264,7 @@ function Grid({ ...props }) {
             }
             points="400"
             id="19"
-            onClick={e => select(400, "cat4", 19)}
+            onClick={e => select(400, randomOutput[3], 19)}
           >
             <h3 className="text-light">400</h3>
           </div>
@@ -275,14 +275,14 @@ function Grid({ ...props }) {
             }
             points="500"
             id="20"
-            onClick={e => select(500, "cat4", 20)}
+            onClick={e => select(500, randomOutput[3], 20)}
           >
             <h3 className="text-light">500</h3>
           </div>
         </div>
         <div className="col5">
           <div className="category5">
-            <h2>Category 5</h2>
+            <h2>{randomOutput[4]}</h2>
           </div>
           <div
             className={
@@ -291,7 +291,7 @@ function Grid({ ...props }) {
             }
             points="100"
             id="21"
-            onClick={e => select(100, "cat5", 21)}
+            onClick={e => select(100, randomOutput[4], 21)}
           >
             <h3 className="text-light">100</h3>
           </div>
@@ -302,7 +302,7 @@ function Grid({ ...props }) {
             }
             points="200"
             id="22"
-            onClick={e => select(200, "cat5", 22)}
+            onClick={e => select(200, randomOutput[4], 22)}
           >
             <h3 className="text-light">200</h3>
           </div>
@@ -313,7 +313,7 @@ function Grid({ ...props }) {
             }
             points="300"
             id="23"
-            onClick={e => select(300, "cat5", 23)}
+            onClick={e => select(300, randomOutput[4], 23)}
           >
             <h3 className="text-light">300</h3>
           </div>
@@ -324,7 +324,7 @@ function Grid({ ...props }) {
             }
             points="400"
             id="24"
-            onClick={e => select(400, "cat5", 24)}
+            onClick={e => select(400, randomOutput[4], 24)}
           >
             <h3 className="text-light">400</h3>
           </div>
@@ -335,14 +335,14 @@ function Grid({ ...props }) {
             }
             points="500"
             id="25"
-            onClick={e => select(500, "cat5", 25)}
+            onClick={e => select(500, randomOutput[4], 25)}
           >
             <h3 className="text-light">500</h3>
           </div>
         </div>
         <div className="col6">
           <div className="category6">
-            <h2>Category 6</h2>
+            <h2>{randomOutput[5]}</h2>
           </div>
           <div
             className={
@@ -351,7 +351,7 @@ function Grid({ ...props }) {
             }
             points="100"
             id="26"
-            onClick={e => select(100, "cat6", 26)}
+            onClick={e => select(100, randomOutput[5], 26)}
           >
             <h3 className="text-light">100</h3>
           </div>
@@ -362,7 +362,7 @@ function Grid({ ...props }) {
             }
             points="200"
             id="27"
-            onClick={e => select(200, "cat6", 27)}
+            onClick={e => select(200, randomOutput[5], 27)}
           >
             <h3 className="text-light">200</h3>
           </div>
@@ -373,7 +373,7 @@ function Grid({ ...props }) {
             }
             points="300"
             id="28"
-            onClick={e => select(300, "cat6", 28)}
+            onClick={e => select(300, randomOutput[5], 28)}
           >
             <h3 className="text-light">300</h3>
           </div>
@@ -384,7 +384,7 @@ function Grid({ ...props }) {
             }
             points="400"
             id="29"
-            onClick={e => select(400, "cat6", 29)}
+            onClick={e => select(400, randomOutput[5], 29)}
           >
             <h3 className="text-light">400</h3>
           </div>
@@ -395,7 +395,7 @@ function Grid({ ...props }) {
             }
             points="500"
             id="30"
-            onClick={e => select(500, "cat6", 30)}
+            onClick={e => select(500, randomOutput[5], 30)}
           >
             <h3 className="text-light">500</h3>
           </div>

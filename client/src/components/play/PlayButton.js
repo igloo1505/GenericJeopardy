@@ -3,7 +3,7 @@ import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 
-const PlayButton = questions => {
+const PlayButton = ({ questions, ranList }) => {
   const authContext = useContext(AuthContext);
 
   const { isAuthenticated } = authContext;
@@ -21,6 +21,7 @@ const PlayButton = questions => {
             className="btn btn-lg btn-prime"
             to="/play"
             questions={questions}
+            randomlist={ranList}
           >
             <h1 className="play-text">Play</h1>
           </Link>
