@@ -7,21 +7,28 @@ import uuid from "uuid";
 const QuestionForm = ({ DynamicArray }) => {
   const questionContext = useContext(QuestionContext);
   const playContext = useContext(PlayContext);
-  const past = () => {
-    console.log("Change Style Function here");
-  };
-  const setRanList = () => {
-    console.log("I'll fix this later");
-  };
+  // const past = () => {
+  //   console.log("Change Style Function here");
+  // };
+  // const setRanList = () => {
+  //   console.log("I'll fix this later");
+  // };
   const { categoriesPassed, setPassed, setRandomOutput } = playContext;
   const { current, clearCurrent, updateQuestion, questions } = questionContext;
-  eligibleCategory({
-    questions,
-    setPassed,
-    categoriesPassed,
-    past,
-    setRandomOutput
-  });
+  let halfAssAvoidLoop = false;
+  const abc = () => {
+    halfAssAvoidLoop = true;
+  };
+
+  if (halfAssAvoidLoop === false) {
+    // eligibleCategory({
+    //   questions,
+    //   setPassed,
+    //   categoriesPassed,
+    //   setRandomOutput,
+    //   abc
+    // });
+  }
 
   useEffect(() => {
     if (current !== null) {
