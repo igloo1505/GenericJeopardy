@@ -45,8 +45,9 @@ const Navbar = ({ title, icon, ...props }) => {
     <div className="navbar bg-prime">
       <h1>
         <i className={icon} />
-        {title}
+        {isAuthenticated ? "Dewey Jeopardy" : "Jeopardy"}
       </h1>
+
       {isAuthenticated ? <ScoreCard /> : ""}
       <ul>
         <li>

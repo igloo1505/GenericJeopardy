@@ -29,7 +29,6 @@ const eligibleCategory = ({
   let randomList = [];
 
   if (categoriesPassed.length >= 6) {
-    debugger;
     past();
     while (randomList.length < 6) {
       let ran = Math.floor(Math.random() * categoriesPassed.length);

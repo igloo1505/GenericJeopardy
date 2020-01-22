@@ -1,34 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import QuestionContext from "../../context/questions/questionContext";
 import PlayContext from "../../context/play/playContext";
-import eligibleCategory from "../../context/play/eligibleCategory";
 import uuid from "uuid";
 
 const QuestionForm = ({ DynamicArray }) => {
   const questionContext = useContext(QuestionContext);
   const playContext = useContext(PlayContext);
-  // const past = () => {
-  //   console.log("Change Style Function here");
-  // };
-  // const setRanList = () => {
-  //   console.log("I'll fix this later");
-  // };
-  const { categoriesPassed, setPassed, setRandomOutput } = playContext;
-  const { current, clearCurrent, updateQuestion, questions } = questionContext;
-  let halfAssAvoidLoop = false;
-  const abc = () => {
-    halfAssAvoidLoop = true;
-  };
 
-  if (halfAssAvoidLoop === false) {
-    // eligibleCategory({
-    //   questions,
-    //   setPassed,
-    //   categoriesPassed,
-    //   setRandomOutput,
-    //   abc
-    // });
-  }
+  const { categoriesPassed } = playContext;
+  const { current, clearCurrent, updateQuestion } = questionContext;
 
   useEffect(() => {
     if (current !== null) {
