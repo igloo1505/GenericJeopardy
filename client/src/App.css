@@ -332,7 +332,7 @@ ol {
   flex-wrap: wrap;
   padding: 1rem;
   border: #ccc 1px dotted;
-  margin: 1.3rem 0 0 2rem;
+  margin: 1.3rem 0 2rem 0;
 }
 
 @media(min-width:700px) {
