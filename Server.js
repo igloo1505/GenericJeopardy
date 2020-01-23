@@ -3,8 +3,6 @@ const express = require("express");
 const connectDB = require("./config/db");
 const path = require("path");
 
-const auth = require("./middleware/auth");
-
 const app = express();
 
 // Connect Database by calling simple function in external connectDB file brought in above

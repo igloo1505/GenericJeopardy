@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const assert = require("assert");
 const config = require("config");
 const db = config.get("mongoURI");
 
@@ -8,8 +7,7 @@ const connectDB = () => {
     .connect(db, {
       useNewUrlParser: true,
       useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true
+      useFindAndModify: false
     })
     .then(() => console.log("MongoDB Connected"));
 };
