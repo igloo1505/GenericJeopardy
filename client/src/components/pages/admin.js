@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Questions from "../questions/Questions";
-import QuestionForm from "../questions/questionForm";
+import QuestionForm from "../questions/QuestionForm";
 import QuestionFilter from "../questions/QuestionFilter";
 import AuthContext from "../../context/auth/authContext";
 import QuestionContext from "../../context/questions/questionContext";

@@ -39,9 +39,6 @@ function Grid({ ...props }) {
 
   return (
     <Fragment>
-      <h2 className="mobileWarning">
-        This game really isn't ideal for mobile devices... but do your thing.
-      </h2>
       <div className="mainGrid">
         <div className="col1" id="Sample 1">
           <div className="category1">

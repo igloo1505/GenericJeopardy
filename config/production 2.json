@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://Iglooworks:Bigmilly1@cluster0-wafkz.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "secret",
+    "masterPass": "$2a$10$3CfJ1B/ExcZnKsuwhWZEC.cfku05iPGy2Ah1CFFZFbUnDNuKlczoa"
+}

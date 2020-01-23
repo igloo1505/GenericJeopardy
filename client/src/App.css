@@ -332,14 +332,33 @@ ol {
   flex-wrap: wrap;
   padding: 1rem;
   border: #ccc 1px dotted;
-  margin: 1.3rem 0;
+  margin: 1.3rem 0 0 2rem;
 }
 
-ol>li {
-  counter-increment: counter;
-  display: flex;
-  padding: 10px;
-  width: 50%;
+@media(min-width:700px) {
+  ol>li {
+    counter-increment: counter;
+    display: flex;
+    padding: 10px;
+    width: 50%;
+  }
+
+  .mobileWarning {
+    display: none;
+  }
+}
+
+@media(max-width: 700px) {
+  ol>li {
+    counter-increment: counter;
+    display: flex;
+    padding: 10px;
+    width: 90%;
+  }
+
+  .mobileWarning {
+    display: block;
+  }
 }
 
 ol>li::before {
@@ -406,13 +425,10 @@ ol>li::before {
   display: block;
   border: 1px solid grey;
   border-radius: 5px;
-
   padding: 25px;
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
-  transform: translateZ(0);
-  transition: transform 0.25s ease-out;
 }
 
 .card-container-selected {
