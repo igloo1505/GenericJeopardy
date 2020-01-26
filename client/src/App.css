@@ -620,8 +620,8 @@ ol > li::before {
   left: 50%;
   transform: translate(-50%, -50%);
   min-height: 200px;
-  min-width: 400px;
-  max-width: 600px;
+  min-width: min(400px, 90%);
+  max-width: min(600px, 90%);
   border-radius: 15px;
   display: inline-block;
   text-align: center;
