@@ -103,7 +103,7 @@ const Register = props => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="master">Dewey Center Master Password</label>
+          <label htmlFor="master">Master Password</label>
           <input
             type="password"
             name="master"
