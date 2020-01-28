@@ -373,7 +373,7 @@ ol {
     counter-increment: counter;
     display: flex;
     padding: 10px;
-    width: 90%;
+    width: 50%;
   }
 
   .reset-btn {
@@ -643,12 +643,17 @@ ol>li::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-height: 200px;
+  min-height: min(200px, 40%);
+  max-height: min(400px, 60%);
   min-width: min(400px, 90%);
   max-width: min(600px, 90%);
   border-radius: 15px;
   display: inline-block;
   text-align: center;
+}
+
+.play-text {
+  font-size: 6rem;
 }
 
 .reset-btn {
@@ -665,9 +670,7 @@ ol>li::before {
   transform: translate(0, -50%);
 }
 
-.play-text {
-  font-size: 5rem;
-}
+
 
 .badgey {
   font-size: 0.8rem;
