@@ -369,12 +369,20 @@ ol {
 }
 
 @media (max-width: 850px) {
-  ol>li {
+  .catList>li {
     counter-increment: counter;
     display: flex;
     padding: 10px;
     width: 50%;
   }
+
+  .card-about>li {
+    width: 90%;
+    counter-increment: counter;
+    display: flex;
+    padding: 10px;
+  }
+
 
   .reset-btn {
     display: none !important;
