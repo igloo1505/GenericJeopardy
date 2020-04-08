@@ -11,7 +11,7 @@ const eligibleCategory = ({
   abc
 }) => {
   var grouped = _.groupBy(questions, "category");
-
+  console.log(grouped);
   let GroupedArray = Object.values(grouped);
 
   for (var index = 0; index < GroupedArray.length; index++) {
