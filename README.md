@@ -2,7 +2,7 @@ Jeopardy style game using React, Mongo, and Node.js
 
 -React -MongoDB -Node.js -Express -Lodash -React-Bootstrap
 
-Hosted version: https://igloo-jeopardy.herokuapp.com/
+Hosted version: https://igloo-jeopardy.herokuapp.com/   \r\n
 Master Password required to register: Iglooworks
 
 
